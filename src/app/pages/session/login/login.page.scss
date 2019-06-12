@@ -1,0 +1,58 @@
+ion-content.background{
+    --background: url('src/assets/images/clouds-cloudy-farm-236047.jpg') no-repeat 100% 100%;
+}
+
+ion-button {
+  --height: 100px;
+  cursor: pointer;
+}
+
+ion-list.formPadding{
+  padding-right: 10px;
+}
+
+.container{
+  width: 100%;
+  text-align: center;
+}
+
+.error-message{
+  color: red;
+  padding-left: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  align-content: left !important;
+}
+
+.error-container{
+  color: red;
+  padding-left: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  align-content: left !important;
+}
+// ion-grid {
+//     padding: 0 !important;
+//     ion-row {
+//       padding: 0 !important;
+//       ion-col {
+//         padding: 0 !important;
+
+//         ion-card {
+//           padding: 0 !important;
+
+//             ion-list {
+//               margin-inside: 1px !important;
+//               padding: 0 !important;
+
+//               ion-item {
+//                 margin-inside: 1px !important;
+//                 padding: 0 !important;
+//               }
+
+//             }
+
+//           }
+//         }
+//       }
+//     }

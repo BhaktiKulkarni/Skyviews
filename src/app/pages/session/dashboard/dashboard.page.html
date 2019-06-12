@@ -1,0 +1,45 @@
+<!-- <ion-header>
+    <ion-toolbar>
+      <ion-title>Dashboard</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+          Welcome to Dashboard!
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          Your Registered EmailID : {{userEmail}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>  
+    
+
+    
+  </ion-content>
+  <ion-footer (click)="logout()">
+    <ion-toolbar color="secondary">
+      <ion-title>Log out</ion-title>
+    </ion-toolbar>
+  </ion-footer> -->
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="secondary">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Mapbox</ion-title>
+      <ion-button  (click)="logout()">
+          <ion-icon name="power" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="noScroll">
+      <div class="map" id="map"></div>
+      <ion-button [routerLink]="['/panoramic-img-view']"></ion-button>
+  </ion-content>
