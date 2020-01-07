@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar mode="ios" class="navGradient">
+    <ion-buttons slot="start">
+      <ion-menu-button swipeEnabled="true" class="my-custom-menu" id='content'></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-text">Events</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content overflow-scroll="true">
+  <div class="orderMonths pd-r15 pd-l15">
+    <div class="item-leave-height pd-r15 pd-l15">
+      <div class="check-list" col-md-12>
+        <ion-radio-group>
+          <ion-item class="disable-ripple check-wrap" lines="none" no-padding *ngFor="let month of months">
+            <ion-radio slot="start" (click)="showEvents(month)" value="{{month.month}}" [checked]="currMonth == month.name"></ion-radio>
+            <ion-label class='ion-text-center'>{{month.month}}</ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </div>
+    </div>
+
+    <div *ngIf="selectedEvent?.length == 0">
+      <p text-center>No events to display</p>
+    </div>
+    <ion-card class="event-card" *ngFor="let event of selectedEvent?.events; let i=index" (click)="expandEvent(event,i)">
+      <ion-card-header>
+        <ion-card-title>{{event?.title}}</ion-card-title>
+        <ion-card-subtitle>{{event?.start_date}} to {{event?.end_date}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content *ngIf="showDetails(i)">
+        {{event?.excerpt}}
+        <span *ngIf="event?.excerpt ==''"><p class="ion-text-center">Details not available</p></span>
+        <span (click)="openUrl(event)" *ngIf="event.more_info_url != ''">More Information</span>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

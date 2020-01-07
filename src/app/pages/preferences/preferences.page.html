@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-menu id="content" swipeEnabled="false"></ion-menu>
+
+  <ion-toolbar mode="ios" class="navGradient">
+    <ion-title class="titleText">Avatars and Preferences</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-item style="padding: 30px" class="item-leave-height">
+    <ion-label color="primary" position="floating">Avatars</ion-label>
+    <ion-select interface="popover" role="combobox" aria-haspopup="dialog" aria-expanded="false" #newAvatar
+      [(ngModel)]="preferenceavatar" (ionChange)="checkSelected(preferenceavatar)">
+      <ion-select-option *ngFor="let avatar of avatars">{{avatar.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div class="pd-r30 pd-l30 mr-t30">
+    <h5 class="title-text">Preferences</h5>
+  </div>
+  <div class="item-leave-height pd-r15 pd-l15">
+    <div class="check-list mr-b20" col-md-12>
+      <!-- <ion-button fill="outline" *ngFor="let preference of preferences">{{preference}}</ion-button> -->
+      <div class="check-box-wrap mr-b10 mr-r10" *ngFor="let preference of preferences">
+        <ion-item style="padding:0px !important;" class="preferences-box">
+          <ion-checkbox id="icon1" #newPreferences [checked]='preference.checked' (ionChange)="checkEvent($event,preference)"></ion-checkbox>
+          <ion-label for="icon1">{{preference.name}}</ion-label>
+        </ion-item>
+      </div>
+    </div>
+  </div>
+  <!-- <ion-button  expand="full" [routerLink]="['/landing']" class="gradient s-r-btn" [disabled]="(avatarFlag !== true || preferenceFlag !== true)">Submit</ion-button> -->
+  <ion-button expand="full" (click)="navigate()" class="gradient s-r-btn" [disabled]="selectedpreference.length == 0">Submit</ion-button>
+  <!-- [disabled]="" -->
+  <!-- <ion-button  expand="full" [routerLink]="['/landing']" class="gradient s-r-btn" >Submit</ion-button> -->
+</ion-content>

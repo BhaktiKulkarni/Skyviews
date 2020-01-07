@@ -9,3 +9,46 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+@import '../src/assets/css/fonts.css';
+
+
+.drawer-content .drwa-search{
+    padding: 0px;
+  }
+  
+  ::ng-deep .searchbar-input-container.sc-ion-searchbar-ios{
+    height: 40px;
+  }
+  ::ng-deep .drawer-content .drwa-search .searchbar-input-container.sc-ion-searchbar-ios{
+  height: 45px;
+  border-radius: 50px;
+  background-color: rgba(59, 151, 161, 0.40);
+  }
+  ::ng-deep .drawer-content .searchbar-cancel-button.sc-ion-searchbar-ios{
+    display: none !important;
+  }
+.sub-title-text{
+  font-size: 16px;
+  color: #2996B0;
+  font-family:SFPROTEXT-MEDIUM;
+}
+
+.d-block{
+  display: block;
+}
+.color-white{
+  color: #ffffff !important;
+}
+
+.logo-img{
+  width: 180px;
+  height: auto;
+  padding: 0;
+  margin:  30px auto 0;
+}
+.sc-ion-card-md-h{
+  box-shadow: none !important;
+}
+.map-scroll-info ion-list{
+  margin-bottom: 0px !important;
+}

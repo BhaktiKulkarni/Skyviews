@@ -1,0 +1,28 @@
+<ion-content class="round modal-wrap setBackground">
+  <!-- <ion-menu id='myMenu' swipeEnabled="false"></ion-menu> -->
+  <ion-menu id="content" swipeEnabled="false"></ion-menu>
+
+  <div class="modal-wrap">
+    <div class="pd-content">
+    </div>
+    <div class="div1 divPad">
+      <div class="allignPopup modal-content">
+        <ion-row class="textAlign">
+          <h5 text-center>Are you on island?</h5>
+        </ion-row>
+        <ion-row class="btnGap">
+          <ion-col>
+            <ion-button expand="block" class="access" (click)="optionSelected('Yes')">Yes</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" class="access" (click)="optionSelected('No')">No</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <div class="div2 pd-l20 mr-t20 pd-r20">
+      <ion-button expand="full" class="white-btn full-width" (click)="optionSelected('business')">List your Business
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

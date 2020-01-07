@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar class="navGradient">
+    <ion-buttons slot="start">
+      <ion-menu-button swipeEnabled="true" class="my-custom-menu" id='content'></ion-menu-button>
+    </ion-buttons>
+    <ion-title *ngIf="!isSearchbarOpen" class="title-text landing-p-heading">Anguilla</ion-title>
+    <!-- <ion-searchbar class="landing-s-bar" (ionInput)="getItems($event)" [ngClass]="{active: search()}" placeholder="Search"></ion-searchbar> -->
+    <ion-searchbar *ngIf="isSearchbarOpen" debounce="1000" class="landing-s-bar" showCancelButton="always"
+      (ionChange)="getItems($event)"  (ionCancel)="isSearchbarOpen = false" [(ngModel)]="searchInput"></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="!isSearchbarOpen" class="landing-s-bar rfloat searchicon" (click)="isSearchbarOpen = true">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="map mr-t40" id="map">
+  <pre id='categorySelected' class='categorySelect'></pre>
+</div>
+<div class="zoomIcon">
+  <img src="/assets/imgs/fullscreen.png" [routerLink]="['/map']">
+</div>
+<div class="sticky" id="sticky">
+  <h5 class="sub-title">Recommended for you</h5>
+  <ion-slides pager="false" [options]="slideOpts">
+    <ion-slide class="slide-btn" *ngFor="let cat of categoryIdByAvtarPrefrences?.category;let i= index"
+      (click)="scrollTo(cat)">
+      <button (click)="marker(cat,i)" [class]="recStyle[i] == true ? 'applyClass':'removeClass'">
+        <img [src]="cat.category_icon" class="unactive_icon" alt="">
+        <img [src]="cat.new_category_icon" class="active_icon" alt="">
+      </button>
+    </ion-slide>
+    <ion-slide class="" (click)="navPref()" *ngIf="categoryIdByAvtarPrefrences?.category.length>0">
+      <div class="back-slide">
+        <ion-icon name="ios-undo"></ion-icon>
+        <h6 class="text">Back</h6>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <hr>
+</div>
+<div class="drawer map-scroll-info">
+  <div class="drawer-content">
+    <!-- <ion-searchbar (ionInput)="getItems($event)" class="search" placeholder=""></ion-searchbar> -->
+    <div *ngIf="!isPlaceAvailable">
+      <div *ngFor="let cat of categoryIdByAvtarPrefrences?.category" id="{{cat.title}}">
+        <!-- <h5 class="sub-title color-gray" *ngIf="cat.value.length != 0" (click)="categoryClicked(cat.title)">{{cat.title}}</h5> -->
+        <h5 class="sub-title color-gray" *ngIf="cat.value.length != 0">{{cat.title}}
+          <a class="anchorTag" (click)="categoryClicked(cat)">View more</a>
+        </h5>
+        <ion-slides pager="false" [options]="carousalSlideOpts">
+          <ion-slide class="carousalData" *ngFor="let place of cat.value">
+            <div (click)="placeDetails(place, cat.title)" class="location-card">
+              <img [src]="place.image_src">
+              <!-- {{(product.p_name.length > 20) ? (product.p_name | slice:0:20) +'..':(product.p_name) }} -->
+              <p class="ion-text-center" class="desc">
+                <b>{{(place.title.length > 15) ? (place.title | slice:0:15) + '..' : (place.title)}}</b></p>
+              <div class="rate_div">
+                <ion-icon *ngIf="place.star_rating>=1" class="starColor" name="star"></ion-icon>
+                <ion-icon *ngIf="place.star_rating>=2" class="starColor" name="star"></ion-icon>
+                <ion-icon *ngIf="place.star_rating>=3" class="starColor" name="star"></ion-icon>
+                <ion-icon *ngIf="place.star_rating>=4" class="starColor" name="star"></ion-icon>
+                <ion-icon *ngIf="place.star_rating>=5" class="starColor" name="star"></ion-icon>
+              </div>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </div>
+
+    <div *ngIf="isPlaceAvailable">
+      <ion-slides pager="false" [options]="carousalSlideOpts">
+        <ion-slide class="carousalData" *ngFor="let cat of searchResults">
+          <div (click)="placeDetails(cat)" class="location-card">
+            <img [src]="cat.image_Src">
+            <!-- {{(product.p_name.length > 20) ? (product.p_name | slice:0:20) +'..':(product.p_name) }} -->
+            <p class="ion-text-center" class="desc">
+              <b>{{(cat.title.length > 15) ? (cat.title | slice:0:15) + '..' : (cat.title)}}</b></p>
+            <div class="rate_div">
+              <ion-icon *ngIf="cat.star_rating>=1" class="starColor" name="star"></ion-icon>
+              <ion-icon *ngIf="cat.star_rating>=2" class="starColor" name="star"></ion-icon>
+              <ion-icon *ngIf="cat.star_rating>=3" class="starColor" name="star"></ion-icon>
+              <ion-icon *ngIf="cat.star_rating>=4" class="starColor" name="star"></ion-icon>
+              <ion-icon *ngIf="cat.star_rating>=5" class="starColor" name="star"></ion-icon>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+</div>

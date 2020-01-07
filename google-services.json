@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "742370383479",
+    // "firebase_url": "https://skyviews-8a2e1.firebaseio.com",
+    "project_id": "skyviews-8a2e1",
+    "storage_bucket": "skyviews-8a2e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742370383479:android:ea5309ae0696da48",
+        "android_client_info": {
+          "package_name": "com.skyViews.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742370383479-n9gur0uqart9sicu4fnfntga36q596b3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-vpKYmypZugmJY4c7Cq7NWtud5_4jZtU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742370383479-n9gur0uqart9sicu4fnfntga36q596b3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

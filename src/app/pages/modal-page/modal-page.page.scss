@@ -1,0 +1,133 @@
+.share-modal .modal-wrapper {
+  --height: 20%;
+  position: absolute; 
+  top: 80%;
+  display: block;
+  }
+  
+  .forgotPass{
+  margin: 0;
+  width: 100%;
+  }
+  .passwordPrompt{
+  margin:5% 5% 0 5%;
+  }
+  
+  .round{
+  border-radius: 10%;
+  }
+  ion-card-title{
+    font-size: 12px;
+  }
+  .forget-title{
+  margin: 40px 0px 0px;
+  }
+  ion-button{
+    float: right;
+  }
+  ion-icon{
+    font-size: 25px;
+  }
+
+  .upcoming-title{
+    margin: 10px 0px 10px;
+  }
+  .gradient{
+  overflow: hidden;
+  }
+  .item-native{
+  --padding-inline-start: 0px;
+  }
+  .email-input{
+  padding: 0px 20px;
+  }
+  
+  .access {
+  min-height: 42px;
+  --background: rgb(50, 32, 211);
+  // --background: linear-gradient(135deg, rgb(65,234,125) 18%,rgb(65,234,125) 39%,rgb(50,32,211) 98%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3220d3', endColorstr='#41ea7d',GradientType=0 );
+  --background: linear-gradient(356.38deg, #3220d3 0%, #41ea7d 100%);
+  border-radius: 21px;
+  box-shadow: 5px 5px 13px 0 rgba(28, 110, 154, 0.5);
+  overflow: hidden;
+  }
+  .row-full-width{
+  width: 100%;
+  margin-bottom: 13px;
+  }
+  .f-item-m-b{
+  padding-bottom: 20px;
+  }
+  .error-msg{
+  font-size: 13px;
+  margin: 5px 0px;
+  text-align: left !important;
+  color: red;
+  }
+  .item-inner{
+  border-bottom-color: transparent !important;
+  }
+  .card-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .card-header ion-title{
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    padding: 16px 0;
+  }
+  .card-header ion-button{
+    position: absolute;
+    // top: 6px;
+    right: 0px;
+  }
+  .map {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  ion-card-subtitle{
+    font-size: 10px;
+  }
+  ion-col{
+    ion-button{
+      float: inherit;
+    }
+  }
+  
+  .item-native, .item-inner{
+    --inner-border-width: 0px !important;
+  }
+
+  ::ng-deep .mapboxgl-ctrl-geocoder .suggestions {
+    max-height: 160px;
+    overflow-y: auto;
+ }
+ 
+ ::ng-deep .suggestions{
+    display: block !important;
+ }
+
+ ::ng-deep .mapboxgl-ctrl-geocoder .mapboxgl-ctrl{
+  margin: 15px 10px 0 0;
+}
+
+::ng-deep .mapboxgl-ctrl-geocoder--icon-search {
+  top: 8px !important;
+}
+::ng-deep .mapboxgl-ctrl-geocoder--button{
+  top: 8px !important;
+}
+::ng-deep .mapboxgl-ctrl-geocoder--icon .mapboxgl-ctrl-geocoder--icon-close {
+  top: 8px !important;
+}
+::ng-deep .mapboxgl-ctrl-geocoder--input{
+  text-align: center;
+  padding-right: 40px !important;
+  padding-left: 40px !important;
+}

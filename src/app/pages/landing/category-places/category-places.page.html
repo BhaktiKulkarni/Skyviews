@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar mode="ios" class="navGradient">
+    <ion-buttons slot="start">
+      <ion-menu-button swipeEnabled="true" class="my-custom-menu" id='content'></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-text">{{category}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-list>
+  <ion-item class="mr-b20" lines="none" *ngFor="let place of placesByCategory">
+    <div class="details-block" (click)="placeDetails(place.ID)">
+      <div class="palce-img-wrap">
+        <div class="palce-img">
+            <img class="imgCss" [src]="place.gallery[0]">
+        </div>
+      </div>
+      <div>
+        <div class="details-text">
+          <h5>{{place.title}}</h5>
+          <p class="text-lines">{{place.content}}</p>
+        </div>
+        <div class="location-text">
+          <div class="star">
+            <ion-icon *ngIf="place.star_rating>=1" class="starColor" name="star"></ion-icon>
+            <ion-icon *ngIf="place.star_rating>=2" class="starColor" name="star"></ion-icon>
+            <ion-icon *ngIf="place.star_rating>=3" class="starColor" name="star"></ion-icon>
+            <ion-icon *ngIf="place.star_rating>=4" class="starColor" name="star"></ion-icon>
+            <ion-icon *ngIf="place.star_rating>=5" class="starColor" name="star"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <!--  <ion-row>
+          <ion-col col-md-2>
+            <ion-thumbnail slot="start">
+              <ion-img class="imgCss" [src]="place.gallery[0]"></ion-img>
+            </ion-thumbnail> 
+            
+
+          </ion-col>-->
+      <!-- <ion-col col-md-10>
+
+              
+            </ion-col>
+          </ion-row> -->
+    </div>
+  </ion-item>
+</ion-list>
+

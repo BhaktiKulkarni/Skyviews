@@ -1,0 +1,118 @@
+.map {
+    //  position: absolute;
+      height: 50%;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+  }
+  .cal_icon{
+    height: 40%;
+    width: 70%
+  }
+
+  .gradient-btn{
+    --background: rgb(65,234,125);
+    --background: -moz-linear-gradient(-45deg, rgb(65,234,125) 12%, rgb(50,32,211) 89%);
+    --background: -webkit-linear-gradient(-45deg, rgb(65,234,125) 12%,rgb(50,32,211) 89%);
+    --background: linear-gradient(135deg, rgb(65,234,125) 12%,rgb(50,32,211) 89%);
+    --filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41ea7d', endColorstr='#3220d3',GradientType=1 );
+  } 
+  .full-width{
+    width: 100%;
+  }
+  .radius-btn{
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  .titlePadding{
+    padding-left: 20px;
+  }
+  .s-r-btn{
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family:SFPROTEXT-BOLD;
+    height: 43px;
+    width: 180px;
+  }
+  ion-content{
+   --background: #EDEDED;
+  }
+  .planTrip-wrap{
+    width: 100%;
+  }
+  .white-box{
+    background: #ffffff;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.10);
+    border-radius: 15px;
+  }
+  p{
+    margin: 0px;
+  }
+  .cal-title{
+    color: #212121;
+    font-family:SFPROTEXT-SEMIBOLD;
+    font-size: 16px;
+  }
+  .small-text{
+    color: #212121;
+    font-size: 12px;
+    font-family: SFPROTEXT-REGULAR;
+  }
+  .date-input ion-item{
+    --min-height: 25px;
+  }
+  ion-item{
+    --padding-start: 0px;
+  }
+  ion-datetime{
+    padding: 0px 0px;
+    font-family: SFPROTEXT-REGULAR;
+    font-size: 16px;
+    color: #000000;
+  }
+ .gray-title{
+  font-family:SFPROTEXT-MEDIUM;
+  font-size: 14px;
+  color: #9C9C9C;
+  font-weight: normal;
+ }
+ ion-item{
+   --background: transparent;
+  //  --background-activated: transparent;
+ }
+ .label{
+   padding-bottom: 20px;
+ }
+
+ .rotate-90 {
+  display: inline-block; 
+  transform: rotate(90deg);
+}
+
+// .swap-icon-wrap::after{
+//   content: "";
+//   height: 0.5px;
+//   width: 100%;
+//   background-color: #2d8d66;
+//   position: absolute;
+//   top: 50%;
+//   left: 0;
+//   transform: translateY(-50%);
+// }
+.swap-icon{
+  background-color: #2d8d66;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 20px auto;
+    color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    right: 24px;
+    z-index: 999;
+    top: 86.3px;
+}

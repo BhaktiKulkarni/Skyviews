@@ -1,0 +1,140 @@
+.navTitle{
+    padding-left: 40px;
+    padding-right: 40px; 
+    text-align: center;
+}
+.icon{
+    height: 20%;
+    width: 20%;
+}
+.textDel{
+    padding-left: 5px;
+    color: red;
+    font-size: 12px;
+    font-family: SFPROTEXT-REGULAR;
+}
+.edit-icon{
+    width: 12px;
+  }
+.textEdit{
+    padding-left: 5px;
+    color: #3CA999;
+    font-size: 12px;
+    // float: right;
+    font-family: SFPROTEXT-REGULAR;
+}
+.tick-icon{
+    position: absolute;
+    top: 50%;
+    font-size: 25px;
+    margin-top: -12px;
+    color: #25AE88;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.iconTrash{
+    // padding-left: 40px;
+    color: red;
+    font-size: 12px;
+    
+}
+
+ion-img, ion-thumbnail{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+    overflow: hidden;
+}
+ion-thumbnail{
+    box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.5);
+    margin: 0 9px 0 0px;
+}
+.details-text h5{
+    font-family:SFPROTEXT-BOLD;
+    color: #515151;
+    font-size: 14px;
+    margin: 0px;
+}
+.details-text p{
+    font-family: SFPROTEXT-REGULAR;
+    font-size: 12px;  
+    color: #272727;
+    margin: 3px 0px 0px;
+}
+item-inner{
+    padding-left: 0px;
+}
+.r-card-list{
+    padding: 0 15px 0;
+    margin: 20px 0px;
+}
+.r-card-list ion-item{
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.r-card-list ion-item:last-child{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+.iconColor{
+    color: white;
+}
+
+.add-btn{
+    --background: transparent;
+    --background-focused: transparent;
+    --background-hover: transparent;
+    // --color: transparent;
+    --color-activated: transparent;
+    --color-focused: transparent;
+    --box-shadow: none;
+}
+
+.card-info{
+    width: 58vw !important;
+}
+.item-inner{
+    --padding-inline-end: 0px;
+    --padding-right: 0px;
+}
+.r-card{
+    border: 1px solid #e5e5e5 !important;
+    padding: 5px !important;
+    border-radius: 8px !important;
+}
+.card-status{
+    position: absolute;
+    right: 0;
+    top: 0px;
+    font-size: 10px;
+    width: 90px;
+    transform: rotate(42deg) translate(25px, -6px);
+}
+.card-status span{
+    // background-color: red;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #fff;
+}
+
+.bg-orange{
+    background-color: orange;
+}
+.bg-green{
+    background-color: green;
+}
+.bg-red{
+    background-color: red;
+}
+.card-icon{
+    display: flex;
+    align-items: center;
+}
+.iconTrash{
+    font-size: 13px;
+}

@@ -1,0 +1,15 @@
+<ion-header *ngIf="page== 'airport'">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Search Airport</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="page== 'airport'">
+  <ion-searchbar class="landing-s-bar" showCancelButton="always" debounce="1000" (ionChange)="getItems($event)">
+  </ion-searchbar>
+  <ion-list *ngFor="let search of searchResults">
+    <ion-item (click)="selectCode(search)">
+      <p>{{search?.iata}} - {{search?.name}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

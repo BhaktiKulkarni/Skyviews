@@ -1,0 +1,132 @@
+.scroll-content {
+  overflow: hidden;
+  background-color: grey;
+}
+.allignPopup {
+  // padding-top: 50px;
+  // padding-bottom: 50px;
+  // padding-left: 20px;
+  // padding-right: 20px;
+  width: 100%;
+}
+.round {
+  --border-radius: 15px;
+  // background: transparent;'src/assets/imgs/mapbox-icon.png'
+  background-color: grey !important;
+}
+// .setBackground{
+// background-image: 'src/assets/imgs/appbg.jpg';
+// }
+ion-content {
+  --background: grey url("../../../assets/imgs/appbg.jpg") no-repeat center
+    center / cover;
+}
+.content-md {
+  --background: transparent;
+}
+.div2 {
+  --background: #fff;
+  --border-radius: 15px;
+  height: 50px;
+  line-height: 50px;
+}
+.access {
+  min-height: 42px;
+  --background: rgb(50, 32, 211);
+  // --background: linear-gradient(135deg, rgb(65,234,125) 18%,rgb(65,234,125) 39%,rgb(50,32,211) 98%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3220d3', endColorstr='#41ea7d',GradientType=0 );
+  --background: linear-gradient(356.38deg, #3220d3 0%, #41ea7d 100%);
+  border-radius: 21px;
+  box-shadow: 5px 5px 13px 0 rgba(28, 110, 154, 0.5);
+}
+
+.body {
+  background: transparent;
+}
+
+.div1 {
+  background: #fff;
+  border-radius: 15px;
+}
+
+.divPad {
+  // padding:15px;
+  height: 170px;
+  border: 1px solid #d0d0d0;
+  padding-left: 15px;
+  padding-right: 15px;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  width: 300px;
+}
+.btnGap {
+  padding-top: 20px;
+}
+.textAlign {
+  // padding-left: 72px
+  justify-content: center;
+}
+.white-btn {
+  width: 300px;
+  --background-color: #ffffff !important;
+  font-size: 18px;
+  color: #3768b5;
+  border-radius: 21px;
+  border: 1px solid #d0d0d0;
+  text-transform: capitalize;
+  overflow: hidden;
+  font-family: SFPROTEXT-BOLD;
+  min-height: 48px;
+  --background: rgb(255, 255, 255);
+  --background: -moz-linear-gradient(
+    -45deg,
+    rgb(255, 255, 255) 1%,
+    rgb(255, 255, 255) 100%
+  );
+  --background: -webkit-linear-gradient(
+    -45deg,
+    rgb(255, 255, 255) 1%,
+    rgb(255, 255, 255) 100%
+  );
+  --background: linear-gradient(
+    135deg,
+    rgb(255, 255, 255) 1%,
+    rgb(255, 255, 255) 100%
+  );
+  --filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 );
+}
+
+// .pd-content{
+// padding-top: 30%;
+// padding-bottom: 20%;
+// }
+
+// ion-content{
+// --background: grey;
+// }
+
+.modal-wrap {
+  --padding-start: 15px;
+  --padding-end: 15px;
+}
+.modal-content h5 {
+  color: #393939;
+  font-size: 20px;
+  margin-bottom: 0px;
+  font-family: SFPROTEXT-MEDIUM;
+}
+.access {
+  overflow: hidden;
+}
+.modal-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  background: rgba(57, 57, 57, 0.8);
+  padding: 0px 55px;
+  margin: 0 -15px;
+}

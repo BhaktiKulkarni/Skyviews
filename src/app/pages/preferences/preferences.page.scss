@@ -1,0 +1,77 @@
+ion-item.item-label {
+    --padding-start: 0px;
+    --padding-end: 0px;
+}
+
+.check-list{
+    display: flex;
+    flex-wrap: wrap;
+}   
+
+ion-item.preferences-box {
+    --inner-border-width: 0 0 0 0;
+}
+
+ion-item.preferences-box ion-label{
+    color: #000000;
+    border: 1px solid #D0D0D0;
+    font-family: SFPROTEXT-REGULAR;
+    font-size: 13px;
+    border-radius: 5px;
+    padding: 8px 10px;
+}
+
+ion-item.preferences-box.item-checkbox-checked ion-label{
+    color: #ffffff;
+    border: 1px solid #2996B0;
+    background-color: #2996B0;
+    font-family: SFPROTEXT-REGULAR;
+    font-size: 13px;
+    border-radius: 5px;
+    padding: 8px 10px;
+}
+.check-box-wrap{
+    --position: relative;
+    --overflow: hidden;
+    cursor: pointer;
+}
+.check-box-wrap ion-checkbox{
+    position: absolute;
+    margin: 0px;
+    width: 100%;
+    height: 34px;
+    opacity: 0;
+    }   
+.check-box-wrap ion-ripple-effect{
+    display: none;
+}
+
+.check-box-wrap ion-item{
+    --inner-padding-end: 0px;
+    --min-height: 34px;
+}
+.check-box-wrap ion-label{
+    margin: 0px;
+}
+.item-native{
+    --min-height: 34px;
+    --padding-start: 0px;
+    padding-inline-start: 0px;
+    --padding-inline-start: 0px;
+}
+ 
+.s-r-btn{
+  font-size: 16px;
+  color: #ffffff;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family:SFPROTEXT-BOLD;
+  height: 43px;
+  width: 180px;
+}
+.title-text{
+    font-family:SFPROTEXT-MEDIUM;
+    font-size: 17px;
+    color: #3880ff;
+  }

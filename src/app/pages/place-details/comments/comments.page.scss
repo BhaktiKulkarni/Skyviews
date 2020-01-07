@@ -1,0 +1,161 @@
+.profile-box{
+    background-color: transparent;
+    padding: 0px;
+    z-index: 99;
+    box-shadow: inset;
+}
+.profile-info-card{
+    padding: 13px;
+    box-shadow: 0px 0px 4px #968c8c;
+}
+.aCent{
+    margin-left: auto;
+    margin-right: auto;
+}
+.pd15{
+    padding: 15px;
+}
+
+.profileimg{
+    height: 40px;
+    width: 40px;
+}
+
+::ng-deep .my-custom-menu span{
+    font-family: SFPROTEXT-REGULAR;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: normal;
+  }
+
+  .pro-info-wrap{
+      flex: 1;
+  }
+  .card-inner{
+    display: flex;
+    align-items: center;
+  }
+  .pro-img-wrap{
+    // width: 45px;
+    // height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 16px;
+  }
+.details-text-font{
+    font-size: 13px;
+}
+  .header-font{
+      font-size: 16px;
+  }
+.iconTrash{
+    color: red;
+    font-size: 19px;
+}
+
+.auto-height{
+    height: 100%;
+    overflow: scroll;
+}
+
+.profile-info-card{
+    margin-bottom: 20px;
+}
+.statusText{
+    font-size: 12px;
+    color: gray;
+}
+.commentText{
+    display: flex;
+    border: 1px solid #b8b8b8;	
+    align-items: center;
+    padding: 0px 5px;
+}
+.buttonFloat{
+    float: right;
+}
+.img-profile{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+}
+
+.profile-info-card{
+    border: 1px solid #e5e5e5 !important;
+    padding: 5px !important;
+    border-radius: 8px !important;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+}
+.pro-info-wrap .header-font{
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.msg-date{
+    font-size: 12px;
+    color: #979797;
+}
+.com-img-wrap{
+    width: 50px;
+    height: 50px;
+}
+.com-img-wrap .pro-img-block{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.com-img-wrap .pro-img-block img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.card-status{
+    position: absolute;
+    right: 0;
+    top: 0px;
+    font-size: 10px;
+    width: 90px;
+    transform: rotate(42deg) translate(25px, -6px);
+}
+.card-status span{
+    // background-color: red;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #fff;
+}
+.bg-orange{
+    background-color: orange;
+}
+.bg-green{
+    background-color: green;
+}
+.bg-red{
+    background-color: red;
+}
+.card-icon{
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    justify-content: flex-end;
+}
+.iconTrash{
+    font-size: 15px;
+    margin-right: 1px;
+}
+// .action-btn{
+//     background: red;
+//     padding: 5px;
+//     color: #fff;
+//     font-size: 12px;
+//     border-radius: 5px;
+//     width: 49px;
+//     float: right;
+//     margin-top: -18px;
+//     text-align: center;
+// }

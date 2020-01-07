@@ -1,7 +1,78 @@
 <ion-app>
-    <!-- Previously loaded Firebase SDKs -->
+  <ion-menu contentId="content" side="start" type="overlay" menuId="custom" class="my-custom-menu">
+    <ion-header>
+      <ion-toolbar>
+        <img src="./assets/imgs/logo.png" class="nav-logo">
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="menu-wrap">
+      <ion-list class="menu-list">
+        <ion-menu-toggle auto-hide="true">
+          <ion-item *ngIf="!loginFlag" replaceUrl="true" [routerLink]="['/login']" (click)="toggle()">
+            <ion-icon name="contact" slot="start" role="img" class="md hydrated" aria-label="home"></ion-icon>
+            <ion-label>Login</ion-label>
+          </ion-item>
+          <ion-item *ngIf="!loginFlag" replaceUrl="true" [routerLink]="['/landing']" (click)="toggle()">
+            <ion-icon name="home" slot="start" role="img" class="md hydrated" aria-label="home"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+          <ion-item *ngIf="!loginFlag" replaceUrl="true" [routerLink]="['/plan-trip']" (click)="toggle()">
+            <!-- <ion-icon name="paper-plane"></ion-icon> -->
+            <ion-icon name="paper-plane" slot="start" role="img" class="md hydrated" aria-label="home"></ion-icon>
+            <ion-label>Plan My Trip</ion-label>
+          </ion-item>
+          <ion-item *ngIf="!loginFlag" [routerLink]="['/login']" (click)="toggle()">
+            <ion-icon name="bookmark" slot="start" role="img" class="md hydrated" aria-label="home"></ion-icon>
+            <ion-label>My Places</ion-label>
+          </ion-item>
 
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
-  <ion-router-outlet></ion-router-outlet>
+          <!-- <ion-item *ngIf="!loginFlag" [routerLink]="['/login']"  (click)="toggle()">My Profile</ion-item> -->
+
+          <!-- <ion-item *ngIf="loginFlag" (click)="toggle()">{{sessionDetails.user_email}}</ion-item> -->
+          <ion-item *ngIf="loginFlag" replaceUrl="true" [routerLink]="['/user-profile']" (click)="toggle()">
+            <ion-icon name="contact" slot="start" role="img" class="md hydrated" aria-label="home"></ion-icon>
+            <ion-text>{{activeUser}}</ion-text>
+          </ion-item>
+          <ion-item *ngIf="loginFlag" replaceUrl="true" [routerLink]="['/landing']" (click)="toggle()">
+            <ion-icon name="home" slot="start" role="img" class="md hydrated" aria-label="home"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+          <ion-item *ngIf="loginFlag" replaceUrl="true" [routerLink]="['/plan-trip']" (click)="toggle()">
+            <ion-icon name="paper-plane" slot="start" role="img" class="md hydrated" aria-label="home"></ion-icon>
+            <ion-label>Plan My Trip</ion-label>
+          </ion-item>
+          <ion-item *ngIf="loginFlag" replaceUrl="true" [routerLink]="['/saved-places']" (click)="toggle()">
+            <ion-icon name="bookmark" slot="start" role="img" class="md hydrated" aria-label="home"></ion-icon>
+            <ion-label>My Places</ion-label>
+          </ion-item>
+          <!-- <ion-item *ngIf="loginFlag" [routerLink]="['/user-profile']" (click)="toggle()">My Profile</ion-item> -->
+          <!-- <ion-item *ngIf="loginFlag" (click)="alert()"> -->
+          <ion-item *ngIf="loginFlag" (click)="listBusiness()" routerLink>
+            <ion-icon name="list-box" slot="start" role="img" class="md hydrated" aria-label="home"></ion-icon>
+            <ion-label>My Businesses</ion-label>
+          </ion-item>
+          <ion-item replaceUrl="true" [routerLink]="['/island-events']" (click)="toggle()">
+            <ion-icon name="calendar" slot="start" role="img" class="md hydrated" aria-label="home">
+            </ion-icon>
+            <ion-label>Events</ion-label>
+          </ion-item>
+          <ion-item replaceUrl="true" [routerLink]="['/about']" (click)="toggle()">
+            <ion-icon name="information-circle" slot="start" role="img" class="md hydrated" aria-label="home">
+            </ion-icon>
+            <ion-label>About Anguilla</ion-label>
+          </ion-item>
+          <ion-item *ngIf="loginFlag" (click)="logout()" routerLink>
+            <ion-icon name="log-out" slot="start" role="img" class="md hydrated" aria-label="home"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-item>
+        <ion-label class="ion-text-center" id="ftze">V 1.0.1.7</ion-label>
+      </ion-item>
+    </ion-footer>
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>
 </ion-app>

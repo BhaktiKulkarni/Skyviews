@@ -1,0 +1,277 @@
+.map {
+    position: absolute;
+    height: 50%;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+ .drawer {
+    overflow-y: scroll;
+     border-radius: 15px;
+     background-color: white;
+     height: 50%;
+  }
+
+.check-list{
+   display: flex;
+   flex-wrap: wrap;
+}   
+.check-box-wrap{
+   --position: relative;
+   --overflow: hidden;
+   cursor: pointer;
+}
+.check-box-wrap ion-checkbox{
+   position: absolute;
+   margin: 0px;
+   width: 100%;
+   height: 34px;
+   opacity: 0;
+   }   
+.check-box-wrap ion-ripple-effect{
+   display: none;
+}
+
+.check-box-wrap ion-item{
+   --inner-padding-end: 0px;
+   --min-height: 34px;
+}
+.check-box-wrap ion-label{
+   margin: 0px;
+}
+ion-item.preferences-box {
+   --inner-border-width: 0 0 0 0;
+}
+ion-item.preferences-box ion-label{
+   color: #000000;
+   border: 1px solid #D0D0D0;
+   font-family: SFPROTEXT-REGULAR;
+   font-size: 13px;
+   border-radius: 5px;
+   padding: 8px 10px;
+}
+ion-item.preferences-box.item-checkbox-checked ion-label{
+   color: #ffffff;
+   border: 1px solid #2996B0;
+   background-color: #2996B0;
+   font-family: SFPROTEXT-REGULAR;
+   font-size: 13px;
+   border-radius: 5px;
+   padding: 8px 10px;
+}
+.s-r-btn{
+   font-size: 16px;
+   color: #ffffff;
+   margin: 0 auto;
+   border-radius: 10px;
+   overflow: hidden;
+   font-family:SFPROTEXT-BOLD;
+   height: 43px;
+   width: 180px;
+ }
+
+ .margin{
+   // margin-top: 50%;
+   margin-top: 81%;
+ }
+ .b-drawer{
+    height: 52% !important;
+ }
+ 
+ ion-item{
+   --inner-padding-end: 0px;
+   --padding-start:0px
+ }
+ .b-map{
+   height: 40% !important;
+ }
+ ion-input{
+    color: #000000;
+    font-family:SFPROTEXT-BOLD;
+    font-size: 15px;
+ }
+ .location_input {
+   margin-left: 10px;
+ }
+ .label-text{
+    color: #646464;
+    font-family: SFPROTEXT-REGULAR;
+    font-size: 14px;
+ }
+ .u-img-block{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #979797;
+ }
+ .u-img-block img{
+   width: 80px;
+   height: 80px;
+   object-fit: cover;
+ }
+ ion-slide{
+   justify-content: flex-start;
+ }
+ .cus-file-btn{
+    border: 1px dashed #979797;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+ }
+ .cus-file-btn img{
+    width: 30px;
+    height: 30px;
+    margin:  0 auto;
+    display: block;
+    overflow: hidden;
+ }
+ .cus-file-btn input{
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 100%;
+   opacity: 0;
+   font-size: 0;
+   cursor: pointer;
+ }
+.bor-none{
+   --border-color: #ffffff;
+ }
+ .iconColor{
+   color: white;
+}
+.coordinates {
+   background: rgba(0,0,0,0.5);
+   color: #fff;
+   position: absolute;
+   bottom: 40px;
+   left: 10px;
+   padding:5px 10px;
+   margin: 0;
+   font-size: 11px;
+   line-height: 18px;
+   border-radius: 3px;
+   display: none;
+   }
+
+   ::ng-deep .mapboxgl-ctrl-geocoder .mapboxgl-ctrl{
+      margin: 15px 10px 0 0;
+   }
+   
+   ::ng-deep .mapboxgl-ctrl-geocoder--icon-search {
+      top: 8px !important;
+   }
+   ::ng-deep .mapboxgl-ctrl-geocoder--button{
+      top: 8px !important;
+   }
+   ::ng-deep .mapboxgl-ctrl-geocoder--icon .mapboxgl-ctrl-geocoder--icon-close {
+      top: 8px !important;
+   }
+   ::ng-deep .mapboxgl-ctrl-geocoder--input{
+      text-align: center;
+      padding-right: 40px !important;
+      padding-left: 40px !important;
+   }
+
+   .input-text{
+      padding-top: 20px; 
+      font-size: 16px; 
+      color: #2996B0;
+   }
+
+::ng-deep .mapboxgl-ctrl-geocoder .suggestions {
+   max-height: 160px;
+   overflow-y: auto;
+}
+
+::ng-deep .suggestions{
+   display: block !important;
+}
+
+
+ion-item.check-wrap{
+   position: relative;
+   width: 33.33%;
+   --min-height: 35px;
+   overflow: hidden;
+   margin-bottom: 15px;
+}
+
+ion-item.check-wrap ion-label{
+   color: #000000;
+   border: 1px solid #D0D0D0;
+   font-family: SFPROTEXT-REGULAR;
+   font-size: 13px;
+   border-radius: 5px;
+   padding: 8px 10px;
+}
+
+ion-item.check-wrap.item-radio-checked ion-label{
+   color: #ffffff;
+   border: 1px solid #2996B0;
+   background-color: #2996B0;
+   font-family: SFPROTEXT-REGULAR;
+   font-size: 13px;
+   border-radius: 5px;
+   padding: 8px 10px;
+}
+.check-wrap ion-radio{
+   position: absolute;
+   margin: 0px;
+   width: 100%;
+   height: 34px;
+   opacity: 0;
+   }   
+
+.check-list ion-radio-group{
+   display: flex;
+   flex-wrap: wrap;
+}
+.avt-tabs ion-item{
+   display: inline-block;
+   margin-right: 10px;
+   margin-bottom: 3px;
+   text-align: center;
+   width: 46%;
+}
+ion-item.check-wrap ion-label{
+margin: 0;
+}
+.slide-loc-img{
+   width: 100px;
+   height: 100px;
+   background-color: #f1f1f1;
+   position: relative;
+}
+.slide-loc-img img{
+   width: 100px;
+   height: 100px;
+   object-fit: contain;
+}
+.slide-loc-img button{
+   position: absolute;
+   padding: 0px;
+   // background: transparent;
+   right: 3px;
+   top: 3px;
+   background-color: #386fb1;
+   padding: 2px 2px 0px;
+   border-radius: 2px;
+  color: #ffffff;
+}
+.error-msg{
+   color: red;
+   font-size: 12px;
+   text-align: left !important;
+   margin: 5px 0px;
+}
+
+// ion-rating {
+//    --star-color: gray;
+//    --star-color-filled: green;
+//  }

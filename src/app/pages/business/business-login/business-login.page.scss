@@ -1,0 +1,150 @@
+$bg-white: rgba(255, 255, 255, 1);
+
+// ion-button {
+//   --height: 100px;
+//   cursor: pointer;
+// }
+.business_logo{
+  max-width: 30px;
+  margin: 0 auto;
+}
+
+ion-list.formPadding{
+  padding-right: 10px;
+}
+
+.container{
+  width: 100%;
+  text-align: center;
+}
+
+.error-message{
+  color: red;
+  padding-left: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  align-content: left !important;
+}
+
+.error-container{
+  color: red;
+  padding-left: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  align-content: left !important;
+}
+
+.gradient{
+  border-radius: 15px;
+  background: rgb(65,234,125);
+  background: -moz-linear-gradient(-45deg,  rgb(65,234,125) 18%, rgb(65,234,125) 39%, rgb(50,32,211) 98%);
+  background: -webkit-linear-gradient(-45deg,  rgb(65,234,125) 18%,rgb(65,234,125) 39%,rgb(50,32,211) 98%);
+  background: linear-gradient(135deg,  rgb(65,234,125) 18%,rgb(65,234,125) 39%,rgb(50,32,211) 98%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41ea7d', endColorstr='#3220d3',GradientType=1 );
+}
+
+.logo-img{
+  width: 180px;
+  height: auto;
+  padding: 0;
+  margin:  30px auto 0;
+}
+#login-card{
+  padding: 20px 17px 20px 24px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15);
+}
+#login-card h4{
+  font-family:SFPROTEXT-BOLD;
+  color: #3768B5;
+  font-size: 20px;
+  margin: 0px;
+}
+.login-input input, .login-input .label-floating.sc-ion-label-ios-h{
+  color: #646464;
+  font-size: 14px;
+  font-family:SFPROTEXT-MEDIUM;
+}
+.login-btn{
+  // box-shadow: 5px 5px 13px  rgba(28, 110, 154, 0.5);
+  border-radius: 20px;
+  font-family:SFPROTEXT-BOLD;   
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: normal;
+  border-radius:  10%;
+  --background: rgb(65,234,125);
+  --background: linear-gradient(356.38deg, #3220D3 0%, #41EA7D 100%);
+  border-radius: 21px;
+  // box-shadow: 5px 5px 13px 0 rgba(28, 110, 154, 0.5);
+  overflow: hidden;
+  min-height: 65px;
+}
+.ion .native-input{
+  font-size: 14px;
+  font-family:SFPROTEXT-MEDIUM;
+}
+
+.ion-checkbox .ion-checkbox-icon {
+  border-radius: 2px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-color: #dedede;
+  background-color: #ffffff;
+}
+
+.ion-checkbox .ion-checkbox-checked .ion-checkbox-inner {
+  left: 16px;
+  top: 5px;
+  position: absolute;
+  width: 14px;
+  height: 27px;
+  border-color: #427feb;
+  border-top-width: 0;
+  border-right-width: 4px;
+  border-bottom-width: 4px;
+  border-left-width: 0;
+}
+.item-native{
+  padding-left: 0px;
+}
+.ion-checkbox-md .ion-checkbox-checked {
+  border-color: #fafafb;
+  background-color: #f9f9f9;
+}
+.rem-text{
+  font-family:SFPROTEXT-MEDIUM;
+  font-size: 14px;
+  color: #646464;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pass-text{
+  color: #646464;
+  font-size: 14px;
+  font-family:SFPROTEXT-LIGHT;
+}
+
+ion-button{
+  --background-color: $bg-white !important;
+}
+
+ .white-btn{
+   --background-color: #ffffff !important;
+   font-size: 18px;
+   color: #3768B5;
+   border-radius: 21px;
+   text-transform: capitalize;
+   overflow: hidden;
+   font-family: SFPROTEXT-BOLD;
+   min-height: 65px;
+   --background: rgb(255,255,255);
+  --background: -moz-linear-gradient(-45deg, rgb(255,255,255) 1%, rgb(255,255,255) 100%);
+  --background: -webkit-linear-gradient(-45deg, rgb(255,255,255) 1%,rgb(255,255,255) 100%);
+  --background: linear-gradient(135deg, rgb(255,255,255) 1%,rgb(255,255,255) 100%);
+  --filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 );
+ }
+

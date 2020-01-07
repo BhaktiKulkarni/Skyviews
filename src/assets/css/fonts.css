@@ -1,0 +1,26 @@
+
+@font-face{
+  font-family:SFPROTEXT-BOLD;
+  src: url("../fonts/SFPROTEXT-BOLD.TTF") format("opentype");
+}
+@font-face{
+  font-family:SFPROTEXT-HEAVY;
+  src: url("../fonts/SFPROTEXT-HEAVY.TTF") format("opentype");
+}
+@font-face{
+  font-family:SFPROTEXT-LIGHT;
+  src: url("../fonts/SFPROTEXT-LIGHT.TTF") format("opentype");
+}
+@font-face{
+  font-family:SFPROTEXT-MEDIUM;
+  src: url("../fonts/SFPROTEXT-MEDIUM.TTF") format("opentype");
+}
+@font-face{ 
+  font-family: SFPROTEXT-REGULAR;
+  src: url("../fonts/SFPROTEXT-REGULAR.TTF") format("opentype");
+}
+@font-face{
+  font-family:SFPROTEXT-SEMIBOLD;
+  src: url("../fonts/SFPROTEXT-SEMIBOLD.TTF") format("opentype");
+}
+

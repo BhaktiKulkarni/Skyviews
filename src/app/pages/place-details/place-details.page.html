@@ -1,0 +1,171 @@
+<ion-header>
+  <ion-toolbar mode="ios" class="navGradient">
+    <ion-buttons slot="start">
+      <ion-back-button class="my-custom-menu" defaultHref="landing"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titleText">{{details.place_detail?.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-fab vertical="top" horizontal="end" slot="fixed" edge="true" *ngIf="showFabButton">
+    <ion-fab-button size="small">
+      <ion-icon name="link" class="chainIcon"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list>
+      <ion-fab-button *ngIf="details.place_detail?.fb_url != ''" color="light" (click)="openSocialPage(details.place_detail.fb_url)">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button *ngIf="details.place_detail?.twitter_url != ''" color="light" (click)="openSocialPage(details.place_detail.twitter_url)">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button *ngIf="details.place_detail?.instagram_url != ''" color="light" (click)="openSocialPage(details.place_detail.instagram_url)">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button *ngIf="details.place_detail?.tripadvisor_url != ''"  color="light" (click)="openSocialPage(details.place_detail.tripadvisor_url)">
+          <ion-icon src="/assets/imgs/tripadvisor.svg"></ion-icon>
+        </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <ion-row>
+    <ion-slides *ngIf="!imgFlag" class="details-box-slide mr-t30 mr-b10 pd-b40" pager="true" [options]="placeImgs">
+      <ion-slide *ngFor="let img of details.place_detail?.gallery">
+        <img [src]="img">
+      </ion-slide>
+    </ion-slides>
+    <ion-col size="12">
+        <img *ngIf="imgFlag" class="singleImgs" [src]="details.place_detail?.gallery[0]">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <div class="s-button-wrap pd-r10 pd-l10">
+      <ion-button *ngIf="!details.place_detail?.like_status && !likeFlag" class="socialBtns gray-r-btn" fill="outline"
+        icon-only (click)="likeBtn()">
+        <ion-icon name="thumbs-up"></ion-icon>Like
+      </ion-button>
+      <ion-button *ngIf="details.place_detail?.like_status || likeFlag" class="savedBtns" fill="outline" icon-only
+        (click)="unlike()">
+        <ion-icon name="thumbs-up"></ion-icon>
+        <ion-text>Liked</ion-text>
+      </ion-button>
+      <ion-button class="socialBtns gray-r-btn" fill="outline" icon-only (click)="addComment()">
+        <ion-icon name="chatboxes"></ion-icon>Comment
+      </ion-button>
+      <!-- <ion-button *ngIf="!sessionDetails.traveler" class="socialBtns gray-r-btn" fill="outline" icon-only  [routerLink]="['/login']">
+        <ion-icon name="chatboxes"></ion-icon>Comment
+      </ion-button> -->
+      <ion-button *ngIf="!details.place_detail?.saved && !savePlaceFlag" class="socialBtns gray-r-btn" fill="outline"
+        icon-only (click)="saveBtn()">
+        <ion-icon name="download"></ion-icon>
+        <ion-text>Save</ion-text>
+      </ion-button>
+      <ion-button *ngIf="details.place_detail?.saved || savePlaceFlag" class="savedBtns" fill="outline" icon-only
+        (click)="unsaveBtn(details.place_detail?.ID)">
+        <ion-icon name="download"></ion-icon>
+        <ion-text>Saved</ion-text>
+      </ion-button>
+      <!-- <ion-button *ngIf="!sessionDetails.traveler" class="socialBtns gray-r-btn" fill="outline" icon-only
+        (click)="saveBtn()">
+        <ion-icon name="download" [routerLink]="['/login']"></ion-icon>Save
+      </ion-button> -->
+      <ion-button class="socialBtns gray-r-btn" fill="outline" icon-only (click)="shareLink(details.place_detail)">
+        <ion-icon name="share"></ion-icon>Share
+      </ion-button>
+      <!-- <ion-button  *ngIf="!sessionDetails.traveler" class="socialBtns gray-r-btn" fill="outline" icon-only (click)="likeBtn()">
+        <ion-icon name="share" [routerLink]="['/login']"></ion-icon>Share
+      </ion-button> -->
+    </div>
+  </ion-row>
+  <ion-row>
+    <ion-col col-md-6 [class]="priceAvailable ? 'align-self-center' : 'align-self-start'">
+      <div class="details-price">
+        <div class="text-center divWidth">
+          <ion-img class="logo" [src]="details.place_detail?.logo"></ion-img>
+          <div class="rate_div">
+            <ion-icon *ngIf="details.place_detail.start_rating>=1" class="starColor" name="star"></ion-icon>
+            <ion-icon *ngIf="details.place_detail.start_rating>=2" class="starColor" name="star"></ion-icon>
+            <ion-icon *ngIf="details.place_detail.start_rating>=3" class="starColor" name="star"></ion-icon>
+            <ion-icon *ngIf="details.place_detail.start_rating>=4" class="starColor" name="star"></ion-icon>
+            <ion-icon *ngIf="details.place_detail.start_rating>=5" class="starColor" name="star"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col *ngIf="details.place_detail?.price_label != ''" col-md-6 class="ion-align-self-end">
+      <div class="details-price">
+        <div> </div>
+        <div class="price">
+          <p>{{details.place_detail?.price_label}}</p>
+          <p>Per Night</p>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p *ngIf="details.place_detail?.post_content != ''" class="dis-para pd-l10 pd-r10 mr0">
+        {{details.place_detail?.post_content}}
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div *ngIf="((details.place_detail?.phone != '') && (details.place_detail?.phone != 'null'))" class="contact-info pd-l10 pd-r10 mr-t10 mr-b10">
+        <!-- <ion-icon name="call" color="primary"></ion-icon> -->
+        <img src="/assets/imgs/phone.svg" alt="">
+        <!-- <p (click)="dialNumber()" class="mr0 mr-l20">+1 264-584-0001</p> -->
+        <a class="mr0 mr-l20 telText" href="tel:{{details.place_detail.phone}}">{{details.place_detail.phone}}</a>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div *ngIf="((details.place_detail?.url != '') && (details.place_detail?.url != 'null'))" class="contact-info pd-l10 pd-r10 mr-b10">
+        <img src="/assets/imgs/glob.png" alt="">
+        <!-- <p class="mr0 mr-l20">www.zemibeach.com</p> -->
+        <p class="mr0 mr-l20" (click)="openBrowser()">{{details.place_detail?.url}}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col (click)="openEmail(details.place_detail)">
+      <div *ngIf="((details.place_detail?.email != '')&&(details.place_detail?.email != 'null'))" class="contact-info pd-l10 pd-r10">
+        <img src="/assets/imgs/mail.png" alt="">
+        <p class="mr0 mr-l20">{{details.place_detail?.email}}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col *ngIf="routing=='Yes'">
+      <div class="contact-info pd-l10 pd-r10 mr-t10" *ngIf="details.place_detail?.coordinates?.latitude != ''">
+        <img class="navLogo" src="/assets/imgs/nav.png" alt="">
+        <p class="mr0 mr-l10" (click)="navigatePlace()">Route to {{details.place_detail?.title}} from current location
+        </p>
+      </div>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-row>
+    <ion-col>
+      <ion-input *ngIf="commentFlag" type='text' [(ngModel)]='comment' placeholder="Enter your comment">
+        <ion-button class="gradient" (click)="sendComment()">Send</ion-button>
+      </ion-input>
+    </ion-col>
+  </ion-row> -->
+  <ion-row *ngIf="bkNow">
+    <ion-col>
+      <div class="pd-l10 pd-r10 mr-t20 mr-b20">
+        <ion-button class="gradient-btn full-width radius-btn" (click)="bookNow()">Book Now</ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div class="dis-text pd-l10 pd-r10">
+        <p class="color-gray mr0">Nearby Places</p>
+        <p class="color-blue mr0">Within 2miles ></p>
+      </div>
+    </ion-col>
+  </ion-row>
+  <div class="map" id="map2"></div>
+</ion-content>

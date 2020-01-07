@@ -1,0 +1,229 @@
+<ion-header>
+  <ion-toolbar mode="ios" class="navGradient">
+    <ion-buttons class="iconColor" slot="start">
+      <ion-back-button defaultHref="list-business"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titleText" *ngIf="businessDetails == null">Add Location</ion-title>
+    <ion-title class="titleText" *ngIf="businessDetails != null">Update Location</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <!-- <div class="margin"> -->
+  <form [formGroup]="addBusiness">
+    <ion-item>
+      <ion-label class="label-text ion-text-wrap " position="stacked">Location</ion-label>
+      <ion-input formControlName="location" class="location_input b-inputs" type="text" disabled="true"></ion-input>
+      <ion-button fill="clear" slot="end" (click)="updateCoords()">
+        <ion-icon ios="ios-create" md="md-create" ></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label-text" position="floating">Establishment Name</ion-label>
+      <ion-input formControlName="establishment_name" class="b-inputs" type="text"></ion-input>
+    </ion-item>
+    <div *ngIf="!addBusiness.controls.establishment_name.valid && addBusiness.controls.establishment_name.touched">
+      <p class="ion-text-center error-msg">Establishment name is required</p>
+    </div>
+    <ion-item>
+      <ion-label class="label-text" position="floating">Description</ion-label>
+      <ion-textarea formControlName="establishment_description" class="b-inputs" type="text"></ion-textarea>
+    </ion-item>
+    <ion-item lines="none" *ngIf="!showContacts"  (click)="showContactFields()">
+      <ion-label slot="start">Contacts</ion-label>
+      <ion-icon slot="end" name="add"></ion-icon>
+    </ion-item>
+    <ion-item lines="none" *ngIf="showContacts" (click)="showContactFields()">
+      <ion-label slot="start">Contacts</ion-label>
+      <ion-icon slot="end" name="remove"></ion-icon>
+    </ion-item>
+    <!-- <p  (click)="showContactFields()">Show Contacts</p>
+    <p *ngIf="showContacts" (click)="showContactFields()">Hide Contacts</p> -->
+    <div *ngIf="showContacts">
+      <ion-item>
+        <ion-label class="label-text" position="floating">Phone No.</ion-label>
+        <ion-input formControlName="establishment_phoneno" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label-text" position="floating">Toll Free No.</ion-label>
+        <ion-input formControlName="tollfree_phoneno" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label-text" position="floating">Mobile 1</ion-label>
+        <ion-input formControlName="mobile_no1" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label-text" position="floating">Mobile 2</ion-label>
+        <ion-input formControlName="mobile_no2" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+    </div>
+    <ion-item lines="none" *ngIf="!showWebLinks" (click)="showWebLinkFields()">
+      <ion-label slot="start">Web Links</ion-label>
+      <ion-icon name="add" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item lines="none" *ngIf="showWebLinks" (click)="showWebLinkFields()">
+        <ion-label slot="start">Web Links</ion-label>
+        <ion-icon name="remove" slot="end"></ion-icon>
+      </ion-item>
+    <!-- <p *ngIf="showWebLinks" (click)="showWebLinkFields()">Hide Web Links</p>
+    <p *ngIf="!showWebLinks" (click)="showWebLinkFields()">Show Web Links</p> -->
+    <div *ngIf="showWebLinks">
+      <ion-item>
+        <ion-label class="label-text" position="floating">Website</ion-label>
+        <ion-input formControlName="establishment_website_url" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label-text" position="floating">Email</ion-label>
+        <ion-input formControlName="establishment_email" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label-text" position="floating">Facebook Link</ion-label>
+        <ion-input formControlName="fb_url" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label-text" position="floating">Twitter Link</ion-label>
+        <ion-input formControlName="twitter_url" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label-text" position="floating">Instagram Link</ion-label>
+        <ion-input formControlName="instagram_url" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label-text" position="floating">Tripadvisor Link</ion-label>
+        <ion-input formControlName="tripadvisor_url" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label-text" position="floating">Booking Url</ion-label>
+        <ion-input formControlName="book_now_url" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+    </div>
+    <ion-item>
+      <ion-label position="floating">Business Type</ion-label>
+      <ion-select placeholder="Select One" formControlName="business_type" (ionChange)="businessTypeSel($event)">
+        <ion-select-option value="business">Business</ion-select-option>
+        <ion-select-option value="indegenius">Indigenuous</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div *ngIf="businessSelected">
+      <ion-item>
+        <ion-label class="label-text" position="floating">Charges per day (USD)</ion-label>
+        <ion-input formControlName="establishment_charges_daily" class="b-inputs" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label-text" position="floating">Free Wifi</ion-label>
+        <ion-select placeholder="Select One" formControlName="free_wifi" (ionChange)="wifiSelection($event)">
+          <ion-select-option value="Yes">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <!-- <ion-item>
+            <ion-label class="label-text" position="floating">Charges per day</ion-label>
+            <ion-input formControlName="establishment_charges_daily" class="b-inputs" type="text"></ion-input>
+          </ion-item> -->
+    </div>
+
+
+    <!-- <ion-item> -->
+    <ion-row>
+      <ion-col>
+        <ion-label class="sub-title-text color-blue mr-t20 mr-b10 d-block" (click)="uploadFile('logo')">Upload Logo
+        </ion-label>
+        <div class="cus-file-btn" *ngIf="logo == ''" (click)="uploadFile('logo')">
+          <img src="/assets/imgs/upload.png" alt="">
+        </div>
+        <div *ngIf="logo != ''" class="slide-loc-img">
+          <button>
+            <ion-icon name="close-circle"></ion-icon>
+          </button>
+          <img [src]="logo" alt="" (click)="uploadFile('logo')">
+        </div>
+      </ion-col>
+      <ion-col>
+        <ion-label class="sub-title-text color-blue mr-t20 mr-b10 d-block" (click)="uploadFile('dp')">Display Image
+        </ion-label>
+        <div class="cus-file-btn" *ngIf="displayPicture == ''" (click)="uploadFile('dp')">
+          <img src="/assets/imgs/upload.png" alt="">
+        </div>
+
+        <div class="slide-loc-img" *ngIf="displayPicture != ''" (click)="uploadFile('dp')">
+          <button>
+            <ion-icon name="close-circle"></ion-icon>
+          </button>
+          <img [src]="displayPicture" alt="">
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-label class="sub-title-text color-blue mr-t20 mr-b10 d-block" (click)="uploadFile('images')">Gallery Images
+    </ion-label>
+    <ion-slides pager="false" [options]="slideOpts">
+      <ion-slide (click)="uploadFile('images')">
+        <div class="cus-file-btn">
+          <img src="/assets/imgs/upload.png" alt="">
+        </div>
+      </ion-slide>
+      <ion-slide *ngFor="let img of images; let i = index">
+        <div class="slide-loc-img">
+          <button (click)="removeImg(img,i)">
+            <ion-icon name="close-circle"></ion-icon>
+          </button>
+          <img [src]="img" alt="" *ngIf="businessDetails == null">
+          <img [src]="img.url" alt="" *ngIf="businessDetails != null">
+        </div>
+      </ion-slide>
+    </ion-slides>
+    <div>
+      <h5 class="sub-title-text">Avatars</h5>
+    </div>
+    <ion-radio-group class="avt-tabs">
+      <ion-item class="disable-ripple check-wrap" lines="none" class="ion-no-padding" *ngFor="let avatar of avatars">
+        <ion-radio slot="start" [checked]="avatar.checked" (click)="avatarsChecked($event, avatar)"
+          value="{{avatar.term_id}}"></ion-radio>
+        <ion-label>{{avatar.name}}</ion-label>
+      </ion-item>
+    </ion-radio-group>
+    <div>
+      <h5 class="sub-title-text">Preferences</h5>
+    </div>
+    <ion-item class="item-leave-height bor-none">
+      <div class="check-list" col-md-12>
+        <div class="check-box-wrap mr-b10 mr-r10" *ngFor="let preference of preferences">
+          <ion-item style="padding:0px !important;" class="preferences-box">
+            <ion-checkbox id="icon1" [checked]="preference.checked"
+              (ionChange)="preferencesChecked($event, preference)"></ion-checkbox>
+            <ion-label for="icon1">{{preference.name}}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </ion-item>
+
+    <div>
+      <h5 class="sub-title-text">Categories</h5>
+    </div>
+    <ion-item class="item-leave-height bor-none">
+      <div class="check-list" col-md-12>
+        <div class="check-box-wrap mr-b10 mr-r10" *ngFor="let category of categories">
+          <ion-item style="padding:0px !important;" class="preferences-box">
+            <ion-checkbox id="icon1" [checked]="category.checked" (ionChange)="categoriesChecked($event, category)">
+            </ion-checkbox>
+            <ion-label for="icon1">{{category.name}}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item *ngIf="showStarRating">
+      <ion-label class="label-text" position="stacked">Star Rating</ion-label>
+      <ion-rating formControlName="star_rating" [rate]="rating" [readonly]="false" [resettable]="false" size="large"
+        (rateChange)="onRateChange($event)">
+      </ion-rating>
+    </ion-item>
+    <ion-item text-center class="mr-t30 mr-b30 bor-none">
+      <ion-button *ngIf="businessDetails == null" expand="full" class="gradient s-r-btn" [disabled]="!addBusiness.valid"
+        (click)="addBusinessDetails(addBusiness.value)">Submit
+      </ion-button>
+      <ion-button *ngIf="businessDetails != null" expand="full" class="gradient s-r-btn"
+        (click)="updateBusinessDetails(addBusiness.value)">Update
+      </ion-button>
+    </ion-item>
+  </form>
+  <!-- </div> -->
+</ion-content>

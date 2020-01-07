@@ -1,0 +1,214 @@
+.imgSlider{
+    height:25%;
+    width: 25%;
+    position: absolute;
+}
+.swiper-slide img {
+    // max-width: 100%;
+    // max-height: 100%;
+    border-radius: 15px;
+  }
+  .socialBtns{
+      border-radius: 15px;
+      background-color: white;
+      border-color: grey;
+  }
+ 
+  ::ng-deep .sc-ion-buttons-md-s .button-has-icon-only.button-clear {
+    --padding-top: 11px;
+    --padding-end: 0%;
+    --padding-bottom: 12px;
+    --padding-start: 0px;
+    --border-radius: -63%;
+    margin-left: -29px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    width: 47px;
+    height: 20px;
+}
+  .price{
+    background-clip: text;
+    float: right;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    --background: rgb(64,234,127);
+    --background: linear-gradient(-45deg, rgb(64,234,127) 1%, rgb(51,34,211) 100%);
+    --background: linear-gradient(-45deg, rgb(64,234,127) 1%,rgb(51,34,211) 100%);
+    --background: linear-gradient(135deg, rgb(64,234,127) 1%,rgb(51,34,211) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40ea7f', endColorstr='#3322d3',GradientType=1 );  }
+  .logo{
+      height: 100%;
+      width: 80%;
+  }
+  .map {
+    height: 40%;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+ }
+ .savedBtns{
+  min-height: 25px;
+  height: 25px;
+  border-radius: 50px;
+  border: 1px solid #3cad96;
+  font-family: SFPROTEXT-LIGHT;
+  font-size: 10px;
+  color: #3cad96;
+  --border-color: transparent;
+  cursor: pointer;
+ }
+ ::ng-deep .mapboxgl-canvas-container{
+  position: absolute;
+  width: 451px;
+  height: 310px;
+ }
+ ::ng-deep .details-box-slide .swiper-slide.swiper-slide-active{
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  z-index: 999;
+}
+::ng-deep .details-box-slide .swiper-slide.swiper-slide-next,
+::ng-deep .details-box-slide .swiper-slide.swiper-slide-prev{
+  transform: scale(0.9);
+}
+::ng-deep .details-box-slide .swiper-slide{
+  padding: 10px 0px;
+}
+::ng-deep .my-custom-menu span{
+  font-family: SFPROTEXT-REGULAR;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: normal;
+}
+.gray-r-btn{
+  min-height: 25px;
+  height: 25px;
+  border-radius: 50px;
+  border: 1px solid #979797;
+  font-family:SFPROTEXT-LIGHT;
+  font-size:  10px;
+  color: #979797;
+  --border-color: transparent;
+  cursor: pointer;
+}
+.s-button-wrap{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.divWidth{
+  width: 198px;
+}
+.details-price{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.details-price .logo{
+  margin:  0 auto;
+}
+.price p{
+  color: rgba(28, 110, 154, 1);
+  font-family:SFPROTEXT-MEDIUM;
+  font-size: 35px;
+  font-weight: normal;
+  text-align: left;
+  margin: 0px;
+  line-height: 20px;
+}
+.price p + p{
+  color: #353535;
+  font-size: 10px;
+  font-family:SFPROTEXT-LIGHT;
+  font-style: italic;
+  text-align: right;
+}
+.dis-para{
+  font-size: 15px;
+  color: #525252;
+  font-family: SFPROTEXT-REGULAR;
+  line-height: 20px;
+}
+.contact-info{
+  display: flex;
+  align-items: center;
+  color: #353535;
+  font-size: 15px;
+}
+.radius-btn{
+  border-radius: 50px;
+  overflow: hidden;
+}
+.gradient-btn{
+  --background: rgb(65,234,125);
+  --background: -moz-linear-gradient(-45deg, rgb(65,234,125) 12%, rgb(50,32,211) 89%);
+  --background: -webkit-linear-gradient(-45deg, rgb(65,234,125) 12%,rgb(50,32,211) 89%);
+  --background: linear-gradient(135deg, rgb(65,234,125) 12%,rgb(50,32,211) 89%);
+  --filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41ea7d', endColorstr='#3220d3',GradientType=1 );
+} 
+.full-width{
+  width: 100%;
+}
+.dis-text{
+  font-size: 13px;
+  font-family:SFPROTEXT-MEDIUM;
+  display: flex;
+  justify-content: space-between;
+}
+::ng-deep .details-box-slide .swiper-pagination-bullet{
+  border: 2px solid #979797;
+  background-color: transparent;
+}
+::ng-deep .details-box-slide .swiper-pagination-bullet-active{
+  background: rgb(65,234,125);
+  border: 0;
+  width: 10px;
+  height: 10px;
+}
+.starColor{
+  color: gold;
+}
+
+.telText{
+  text-decoration: none;
+  color: #4a4a4a;
+}
+.marker {
+  background-image: url('/src/assets/imgs/marker.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.navLogo{
+  height: 30px;
+  width:  30px;
+}
+.alignLogo{
+  height: auto;
+  width: 30px;
+}
+.singleImgs{
+  border-radius: 20px;
+  width: 62%;
+  height: auto;
+  margin: 26px auto;
+  display: block;
+}
+ 
+.chainIcon{
+  
+}
+

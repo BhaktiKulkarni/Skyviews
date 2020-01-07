@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-toolbar mode="ios" class="navGradient">
+    <ion-buttons slot="start">
+      <ion-menu-button swipeEnabled="true" class="my-custom-menu" id='content'></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titleText">Plan your Trip</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="one" (ionSelect)="segmentButtonClicked('one')" [checked]="checked">
+      <ion-label>One Way</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="two" (ionSelect)="segmentButtonClicked('two')" [checked]="!checked">
+      <ion-label>Round Trip</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div *ngIf="segSelected == 'from'">
+    <form [formGroup]="fromAnguilla" padding>
+        <div class="swap-icon">
+            <ion-icon  ios="ios-swap" md="md-swap" class="rotate-90" (click)="changeForm('to')"></ion-icon>
+        </div>
+
+      <ion-item>
+        <ion-label position="floating">From</ion-label>
+        <ion-input formControlName="origin" disabled></ion-input>
+      </ion-item>
+      <!-- <ion-item class="swap-icon-wrap" lines="none">
+      </ion-item> -->
+      <ion-item (click)="openModal()">
+        <ion-label position="floating">To</ion-label>
+        <ion-input formControlName="dest" (ionChange)="getInput($event)" placeholder="Input airport code"></ion-input>
+      </ion-item>
+      <!-- <ion-item *ngIf="searchResults.length > 0">
+        <ion-label>Select Airport</ion-label>
+        <ion-select>
+          <ion-select-option *ngFor="let search of searchResults">{{search?.city_iata}} - {{search?.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item> -->
+      <ion-item>
+        <ion-label position="floating">Date</ion-label>
+        <!-- <ion-input formControlName="date" type="date"></ion-input> -->
+        <ion-datetime formControlName="depDate" displayFormat="MM DD YYYY" [min]="currYear" [max]="maxYear"
+          placeholder="Select Date (MM DD YYYY)" value="MM-DD-YY"></ion-datetime>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" [disabled]="!fromAnguilla.valid" (click)="FindPrices(fromAnguilla.value)">Search
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+  <div *ngIf="segSelected == 'to'">
+    <form [formGroup]="toAnguilla" padding>
+        <div class="swap-icon">
+            <ion-icon  ios="ios-swap" md="md-swap" class="rotate-90" (click)="changeForm('from')"></ion-icon>
+        </div>
+
+      <ion-item (click)="openModal()">
+        <ion-label position="floating">From</ion-label>
+        <ion-input formControlName="origin" (ionChange)="getInput($event)" placeholder="Input airport code"></ion-input>
+      </ion-item>
+      <!-- <ion-item *ngIf="searchResults.length > 0">
+        <ion-label>Select Airport</ion-label>
+        <ion-select>
+          <ion-select-option *ngFor="let search of searchResults">{{search?.city_iata}} - {{search?.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item> -->
+      <!-- <ion-item class="swap-icon-wrap" lines="none">
+      </ion-item> -->
+      <ion-item>
+        <ion-label position="floating">To</ion-label>
+        <ion-input formControlName="dest"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Date</ion-label>
+        <!-- <ion-input formControlName="date" type="date"></ion-input> -->
+        <ion-datetime formControlName="depDate" displayFormat="MM DD YYYY" [min]="currYear" [max]="maxYear"
+          placeholder="Select Date (MM DD YYYY)" value="MM-DD-YY"></ion-datetime>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" [disabled]="!toAnguilla.valid" (click)="FindPrices(toAnguilla.value)">Search
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+  <div *ngIf="bestPriceList.length>0">
+    <ion-list *ngFor="let price of bestPriceList">
+      <ion-list-header>Best Price Available</ion-list-header>
+      <ion-row>
+        <ion-col>
+          <p>For Booking</p>
+        </ion-col>
+        <ion-col>
+          <p>{{price.gate}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p>Date</p>
+        </ion-col>
+        <ion-col>
+          <p>{{price.depart_date}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p>Approximately</p>
+        </ion-col>
+        <ion-col>
+          <p>$ {{(price.value/usd) | number : '1.2-2'}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
+  <div *ngIf="bestPriceList.length==0 && searched">
+    <p class="ion-text-center">No results found</p>
+  </div>
+  <div *ngIf="currPriceList.length>0">
+    <ion-list *ngFor="let price of currPriceList">
+      <ion-list-header>Price for Selected Date</ion-list-header>
+      <ion-item>{{price.depart_date}}</ion-item>
+    </ion-list>
+  </div>
+</ion-content>

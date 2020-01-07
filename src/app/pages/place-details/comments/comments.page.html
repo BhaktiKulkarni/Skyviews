@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar mode="ios" class="navGradient">
+    <ion-buttons slot="start">
+      <ion-back-button class="my-custom-menu" defaultHref="place-details"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titleText">Comments</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-row class="auto-height">
+  <ion-col size="12" class="pd15">
+    <!-- <div class="profile-info-card" *ngFor="let acomment of approvedComments">
+      <div class="card-inner">
+        <div class="pro-img-wrap">
+          <div class="pro-img-block">
+            <img class="img-profile" src="/assets/imgs/default_profile-1.png" alt="" />
+          </div>
+        </div>
+        <div class="pro-info-wrap">
+          <h4 class="header-font">{{acomment.fullname}}</h4>
+          <span class="details-text-font">{{acomment.comment_date}}</span>
+        </div>
+      </div>
+      <div class="card-other-info">
+        <p class="details-text-font">{{acomment.comment_content}}</p>
+      </div>
+    </div> -->
+
+    <div class="profile-info-card" *ngFor="let comment of comments">
+      <div class="card-inner">
+        <div class="pro-img-wrap com-img-wrap">
+          <div class="pro-img-block">
+            <img class="img-profile" *ngIf="comment?.user_profile" [src]="comment?.user_profile" alt="" />
+            <img *ngIf="comment?.user_profile == 'No image'" class="img-profile" src="/assets/imgs/default_profile-1.png" alt="" />
+          </div>
+        </div>
+        <div class="pro-info-wrap">
+          <h4 class="header-font">{{comment.fullname}}</h4>
+          <span class="details-text-font msg-date">{{comment.comment_date}}</span>
+        </div>
+        <div class="card-status">
+          <span [class]="comment.comment_status == 'approed'? 'bg-green' : 'bg-orange'">{{comment.comment_status}}</span>
+        </div>
+      </div>
+      <div class="card-other-info">
+        <p class="details-text-font">{{comment.comment_content}}</p>
+      </div>
+      <div class=" action-btn" *ngIf="comment?.user_id == userId">
+          <div class="card-icon" >
+            <!---->
+            <ion-icon name="trash" class="iconTrash" (click)="deleteComment(comment.comment_id)"></ion-icon>
+            Delete 
+            <span class="textDel"></span>
+          </div>
+        </div>
+      <!-- <div class="statusText">
+        <ion-text>{{comment.comment_status}}</ion-text>
+      </div> -->
+    </div>
+
+  </ion-col>
+</ion-row>
+
+<ion-row>
+  <ion-col>
+    <div class="commentText">
+      <ion-textarea rows="1" cols="20" [(ngModel)]="comment" placeholder="Enter your comment">
+      </ion-textarea>
+      <ion-button class="gradient" [disabled]="!comment" (click)="sendComment()">Send</ion-button>
+    </div>
+  </ion-col>
+</ion-row>

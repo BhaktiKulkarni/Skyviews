@@ -1,0 +1,126 @@
+.map {
+    // padding-top: 30px;
+     position: absolute;
+     height: 50%;
+     top: 0;
+     bottom: 0;
+     width: 100%;
+   }
+   // .drawer {
+   //   overflow-y: scroll;
+   //    border-radius: 15px;
+   //    background-color: white;
+   //    height: 50%;
+   //   //  padding: 15px;
+   // }
+   // .mapboxgl-canvas .mapboxgl-canvas-container {
+   //   padding-top: 50px;
+   // }
+   
+   .drawer.map-scroll-info{
+     overflow-y: scroll;
+     box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.2);
+     height: 45%;
+    // padding: 15px;
+    border-radius: 15px;
+   }
+   .starColor{
+     color: gold;
+   }
+   .star{
+     padding-left: 10px;
+   }
+   // .imgCss{
+   //   width: 85%;
+   //   max-width: 100%;
+   //   height: 90px;
+   //   max-height: 100%;
+   //   border-radius: 15px;
+   // }
+   .imgCss, ion-thumbnail{
+     width: 100px;
+     height: 100px;
+     object-fit: cover;
+     border-radius: 15px;
+   }
+   ion-thumbnail{
+     box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.5);
+   }
+
+   ion-list{
+       overflow-y: scroll;
+   }
+   
+   .details-text h5{
+     font-family:SFPROTEXT-BOLD;
+     color: #515151;
+     font-size: 16px;
+     margin: 0px;
+   }
+   .details-text p{
+     font-family:SFPROTEXT-MEDIUM;
+     font-size: 14px;  
+     color: #515151;
+     margin: 3px 0px 0px;
+   }
+   .location-text p{
+     color: #515151;
+     font-size: 10px;
+     display: flex;
+     align-items: center;  
+     font-family: SFPROTEXT-REGULAR;
+   }
+   ion-icon{
+     font-size: 13px;
+   }
+   
+   .location-text div{
+     padding: 0px;
+   }
+   .star ion-icon{
+     font-size: 20px;
+     // color: #3881a9;
+   }
+   item-inner{
+     --border-width: 0px;
+   }
+   .drawer.map-scroll-info{
+     height: 52%;
+     z-index: 99;
+   }
+   
+   .details-block{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+   
+   .palce-img{
+     width: 101px;
+     height: 101px;
+     margin-right: 20px;
+   }
+   
+   .palce-img{
+     width: 101px;
+     height: 101px;
+   }
+   
+   .mapboxgl-popup {
+     max-width: 400px;
+     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     }
+
+     .text-lines{
+      font-family: SFPROTEXT-MEDIUM;
+      font-size: 14px;
+      color: #515151;
+      margin: 3px 0px 0px;
+      display: -webkit-box;
+      max-width: 400px;
+      height: 30.8px;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+     }

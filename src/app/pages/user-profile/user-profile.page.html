@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar class="navGradient">
+    <ion-buttons slot="start">
+      <ion-menu-button swipeEnabled="true" class="my-custom-menu" id='content'></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<div class="profile-box mr-l30 mr-r30">
+  <ion-avatar *ngIf="getSavedTravellerDetails?.profile_img != ''" (click)="uploadFile()" class="aCent">
+    <img *ngIf="!newImage" [src]="getSavedTravellerDetails?.profile_img">
+    <img *ngIf="newImage" [src]="profileImage">
+    <div class="edit-profile-btn">
+      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+    </div>
+  </ion-avatar>
+</div>
+<ion-content>
+  <form [formGroup]="userProfile" class="pro-form-wrap pd-l30 pd-r30 mr-b30">
+    <ion-item>
+      <ion-label class="label-text" position="floating">Full Name</ion-label>
+      <ion-input formControlName="fullname" type="text" value="{{getSavedTravellerDetails?.fullname}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label-text" position="floating">Email Id.</ion-label>
+      <ion-input value="{{sessionDetails.traveler?.user_email}}" [disabled]=true>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label-text" position="floating">Mobile No.</ion-label>
+      <ion-input formControlName="mobile" type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-row class="class-row">
+      <ion-col>
+        <ion-item>
+          <ion-label class="label-text" position="floating">City</ion-label>
+          <ion-input formControlName="city" value="">
+          </ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-md-12>
+        <ion-item>
+          <ion-label class="label-text" position="stacked" color="primary">Country of origin</ion-label>
+          <ion-select formControlName="country_of_origin" interface="popover" role="combobox" aria-haspopup="dialog"
+            aria-expanded="false">
+            <ion-select-option *ngFor="let country of countries">{{country.country_name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="class-row">
+      <ion-col>
+        <ion-item>
+          <ion-label class="label-text" position="floating">Age</ion-label>
+          <ion-input formControlName="age" type="number" value=""></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-md-12>
+        <ion-item>
+          <ion-label class="label-text" position="floating" color="primary">Gender</ion-label>
+          <ion-select formControlName="gender" interface="popover" role="combobox" aria-haspopup="dialog"
+            aria-expanded="false">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+            <ion-select-option value="o">Don't wish to identify</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="class-row">
+      <ion-col col-md-12>
+        <ion-item>
+          <ion-label class="label-text" position="floating" color="primary">Budget per day (USD)</ion-label>
+          <ion-select formControlName="budget_per_day" interface="popover" role="combobox" aria-haspopup="dialog"
+            aria-expanded="false">
+            <ion-select-option>> 150$</ion-select-option>
+            <ion-select-option>150$ - 400$</ion-select-option>
+            <ion-select-option> >400$</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-item>
+      <ion-label class="label-text" position="stacked" color="primary">Avatars</ion-label>
+      <ion-select formControlName="avatars" interface="popover" role="combobox" aria-haspopup="dialog"
+        aria-expanded="false" okText="Okay" cancelText="Dismiss">
+        <ion-select-option *ngFor="let avatar of avatarsArr" [value]="avatar.term_id">{{avatar.name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div class="mr-t30">
+      <h5 class="sub-title-text">Preferences</h5>
+    </div>
+    <ion-item class="item-leave-height" lines="none">
+      <div class="check-list" col-md-12>
+        <!-- <ion-button fill="outline" *ngFor="let preference of preferences">{{preference}}</ion-button> -->
+        <div class="check-box-wrap mr-b10 mr-r10" *ngFor="let preference of preferences">
+          <ion-item style="padding:0px !important;" class="preferences-box">
+            <ion-checkbox id="icon1" [checked]='preference.checked' (ionChange)="checkboxClicked($event, preference)">
+            </ion-checkbox>
+            <ion-label for="icon1">{{preference.name}}</ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </ion-item>
+
+    <ion-button expand="full" (click)="updateProfile(userProfile.value)" class="gradient s-r-btn"
+      [disabled]="!userProfile.valid">Update</ion-button>
+  </form>
+</ion-content>

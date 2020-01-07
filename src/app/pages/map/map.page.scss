@@ -1,0 +1,70 @@
+.map {
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+  .iconColor{
+    color: white;
+}  
+.mapboxgl-ctrl-directions  .mapboxgl-ctrl {
+    position: absolute;
+    margin: 20px;
+    width: 25%;
+    top: 0;
+    bottom: 20%;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.9);
+    overflow-y: scroll;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    line-height: 2em;
+}
+::ng-deep .mapboxgl-control-container{
+  position: relative;
+  width: 60%;
+}
+::ng-deep .directions-control.directions-control, ::ng-deep .mapboxgl-ctrl-directions {
+  width: 100% !important;
+  max-width: 100%  !important;
+  min-width: 100%  !important;
+} 
+::ng-deep .mapboxgl-ctrl-top-right{
+  position: fixed;
+}
+// ::ng-deep .mapboxgl-ctrl .mapboxgl-ctrl-group{
+//   //float: right;
+//   margin: 49px 10px 0 0;
+// }
+
+::ng-deep .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+  margin: 50px 10px 0 0;
+  float: right;
+}
+::ng-deep .mapbox-directions-profile{
+  margin: 10px 0px;
+}
+::ng-deep .mapbox-directions-profile label{
+  font-size: 9px;
+}
+
+::ng-deep .directions-control.directions-control-directions {
+  display: none;
+}
+// .mapboxgl-map {
+//   overflow: visible !important;
+// }
+// .mapboxgl-control-container {
+//   height: 100% !important;
+// }
+// .mapboxgl-ctrl-top-left {
+//   top: 100%;
+//   left: 0;
+//   position: relative;
+// }
+
+// ::ng-deep .mapboxgl-ctrl-bottom-left{
+//     bottom: -200px !important;
+// }

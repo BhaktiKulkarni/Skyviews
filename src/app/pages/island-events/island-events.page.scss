@@ -1,0 +1,81 @@
+.check-list{
+    display: flex;
+    flex-wrap: wrap;
+}   
+.check-box-wrap{
+    --position: relative;
+    --overflow: hidden;
+    width: 29%;
+}
+.orderMonths{
+    flex: 1;
+    margin-top: 10px;
+}
+.scroll{
+    overflow: scroll;
+}
+
+ion-item.check-wrap{
+    position: relative;
+    width: 33.33%;
+    --min-height: 35px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+ion-item.check-wrap ion-label{
+    color: #000000;
+    border: 1px solid #D0D0D0;
+    font-family: SFPROTEXT-REGULAR;
+    font-size: 13px;
+    border-radius: 5px;
+    padding: 8px 10px;
+}
+
+ion-item.check-wrap.item-radio-checked ion-label{
+    color: #ffffff;
+    border: 1px solid #2996B0;
+    background-color: #2996B0;
+    font-family: SFPROTEXT-REGULAR;
+    font-size: 13px;
+    border-radius: 5px;
+    padding: 8px 10px;
+}
+.check-wrap ion-radio{
+    position: absolute;
+    margin: 0px;
+    width: 100%;
+    height: 34px;
+    opacity: 0;
+    }   
+
+.check-list ion-radio-group{
+    display: flex;
+    flex-wrap: wrap;
+}
+ .item-native{
+    --min-height: 34px !important;
+    --padding-start: 0px !important;
+    padding-inline-start: 0px !important;
+    --padding-inline-start: 0px !important;
+    padding-left: 0px;
+}
+.check-list ion-label{  
+    margin: 0px;
+}
+ion-item.check-list{
+    --inner-padding-end: 0px;
+    --min-height: 34px;
+}
+.event-card{
+    background: #f6f6f6;
+    border: 1px solid #d6d6d6;
+    border-radius: 6px;
+    border-left: 5px solid #2996B0;
+}
+.event-card ion-card-title{
+    font-size: 17px;
+}
+span{
+    color:blue;
+}

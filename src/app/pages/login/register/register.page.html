@@ -1,0 +1,101 @@
+<!-- <ion-content class="background">
+<ion-card>
+    <form class="form">
+      <p text-center>Sign Up</p>
+      <ion-item>
+          <ion-label  position="floating" color="primary">Full Name</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+      <ion-item>
+          <ion-label  position="floating" color="primary">Email</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+       
+        <ion-item>
+          <ion-label  position="floating" color="primary">Password</ion-label>
+          <ion-input type="password"class="form-controll" ></ion-input>
+        </ion-item>
+        
+        <ion-item class="item-leave-height">
+            <ion-label color="primary">Role</ion-label>
+            <ion-select interface="popover" role="combobox" aria-haspopup="dialog" aria-expanded="false">
+              <ion-select-option value="Traveller" role="option">Traveller</ion-select-option>
+              <ion-select-option value="Business" role="option">Business</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+        <ion-button class="gradient" expnd="full">Register</ion-button>
+      </form>
+</ion-card>  
+
+</ion-content> -->
+
+<ion-content class="background">
+  <ion-menu id="content" swipeEnabled="false" ></ion-menu>
+  <ion-grid align-items-center justify-content-center>
+    <ion-row style="align-items: center">
+      <img class="logo-img mr-t30" src="/assets/imgs/logo.png">
+    </ion-row>
+    <ion-row justify-content-center>
+      <ion-col style="height: 100%" col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3>
+        <ion-card id="login-card" style="vertical-align: middle">
+          <form [formGroup]="validations_form" align-items-center class="input login-input">
+            <ion-list class="formPadding">
+                <img class="traveler_logo" src="/assets/imgs/traveler.svg" alt="">
+              <h4 text-center>Sign Up</h4>
+              <ion-item>
+                <ion-label position="floating">Full Name</ion-label>
+                <ion-input style="padding: 0px;"  type="text" formControlName="fullname" required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input style="padding: 0px;" type="text" formControlName="user_email" required></ion-input>
+              </ion-item>
+              <div class="error-message">
+                <ng-container *ngFor="let validation of validation_messages.user_email">
+                  <div class="error-message" *ngIf="validations_form.get('user_email').hasError(validation.type) && (validations_form.get('user_email').dirty || validations_form.get('user_email').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input style="padding: 0px;" type="password" formControlName="user_password" required></ion-input>
+              </ion-item>
+              <div class="error-message">
+                <ng-container *ngFor="let validation of validation_messages.user_password">
+                  <div class="error-message" *ngIf="validations_form.get('user_password').hasError(validation.type) && (validations_form.get('user_password').dirty || validations_form.get('user_password').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+              <!-- <ion-item class="item-leave-height">
+                <ion-label position="floating">Role</ion-label>
+                <ion-select formControlName="rolename" interface="popover" role="combobox" aria-haspopup="dialog" aria-expanded="false">
+                  <ion-select-option value="Traveller" role="option">Traveller</ion-select-option>
+                  <ion-select-option value="Business" role="option">Business</ion-select-option>
+                </ion-select>
+              </ion-item> -->
+            </ion-list>
+            <ion-card-content class="pd-b0">
+              <ion-button class="login-btn full-width mr-t20" expand="full"  [disabled]="!validations_form.valid"  (click)="tryRegister(validations_form.value)">Sign Up</ion-button>         
+            </ion-card-content>
+            <label class="error-message">{{errorMessage}}</label>
+            <label class="success-message">{{successMessage}}</label> 
+          </form>
+        </ion-card>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col align-items-center>
+              <ion-card-content>
+                <ion-button  [routerLink]="['/login']" expand="full" class="white-btn full-width">Already have account?</ion-button>
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

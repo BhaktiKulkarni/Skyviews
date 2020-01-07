@@ -1,7 +1,6 @@
 {
-  "name": "Skyviews",
+  "name": "app_skyviews",
   "integrations": {
-    "capacitor": {},
     "cordova": {}
   },
   "type": "angular"

@@ -1,6 +1,545 @@
 // App Styles
 // ----------------------------------------------------------------------------
-// Put style rules here that you want to apply to the entire application. These 
-// styles are for the entire app and not just one component. Additionally, this 
-// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// Put style rules here that you want to apply to the entire application. These
+// styles are for the entire app and not just one component. Additionally, this
+// file can hold Sass mixins, functions, and placeholder classes to be imported
 // and used throughout the application.
+
+/* all margin */
+.mr0 {
+  margin: 0px !important;
+}
+.mr10 {
+  margin: 10px !important;
+}
+.mr20 {
+  margin: 20px !important;
+}
+.mr30 {
+  margin: 30px !important;
+}
+.mr40 {
+  margin: 40px !important;
+}
+.mr50 {
+  margin: 50px !important;
+}
+.mr60 {
+  margin: 60px !important;
+}
+.mr70 {
+  margin: 70px !important;
+}
+.mr80 {
+  margin: 80px !important;
+}
+.mr90 {
+  margin: 90px !important;
+}
+.mr100 {
+  margin: 100px !important;
+}
+
+/* margin top */
+.mr-t0 {
+  margin-top: 0px !important;
+}
+.mr-t10 {
+  margin-top: 10px !important;
+}
+.mr-t20 {
+  margin-top: 20px !important;
+}
+.mr-t30 {
+  margin-top: 30px !important;
+}
+.mr-t40 {
+  margin-top: 40px !important;
+}
+.mr-t50 {
+  margin-top: 50px !important;
+}
+.mr-t60 {
+  margin-top: 60px !important;
+}
+.mr-t70 {
+  margin-top: 70px !important;
+}
+.mr-t80 {
+  margin-top: 80px !important;
+}
+.mr-t90 {
+  margin-top: 90px !important;
+}
+.mr-t100 {
+  margin-top: 100px !important;
+}
+
+/* margin right */
+.mr-r0 {
+  margin-right: 0px !important;
+}
+.mr-r10 {
+  margin-right: 10px !important;
+}
+.mr-r20 {
+  margin-right: 20px !important;
+}
+.mr-r30 {
+  margin-right: 30px !important;
+}
+.mr-r40 {
+  margin-right: 40px !important;
+}
+.mr-r50 {
+  margin-right: 50px !important;
+}
+.mr-r60 {
+  margin-right: 60px !important;
+}
+.mr-r70 {
+  margin-right: 70px !important;
+}
+.mr-r80 {
+  margin-right: 80px !important;
+}
+.mr-r90 {
+  margin-right: 90px !important;
+}
+.mr-r100 {
+  margin-right: 100px !important;
+}
+
+/* margin bottom */
+.mr-b0 {
+  margin-bottom: 0px !important;
+}
+.mr-b10 {
+  margin-bottom: 10px !important;
+}
+.mr-b20 {
+  margin-bottom: 20px !important;
+}
+.mr-b30 {
+  margin-bottom: 30px !important;
+}
+.mr-b40 {
+  margin-bottom: 40px !important;
+}
+.mr-b50 {
+  margin-bottom: 50px !important;
+}
+.mr-b60 {
+  margin-bottom: 60px !important;
+}
+.mr-b70 {
+  margin-bottom: 70px !important;
+}
+.mr-b80 {
+  margin-bottom: 80px !important;
+}
+.mr-b90 {
+  margin-bottom: 90px !important;
+}
+.mr-b100 {
+  margin-bottom: 100px !important;
+}
+
+/* margin left */
+.mr-l0 {
+  margin-left: 0px !important;
+}
+.mr-l10 {
+  margin-left: 10px !important;
+}
+.mr-l20 {
+  margin-left: 20px !important;
+}
+.mr-l30 {
+  margin-left: 30px !important;
+}
+.mr-l40 {
+  margin-left: 40px !important;
+}
+.mr-l50 {
+  margin-left: 50px !important;
+}
+.mr-l60 {
+  margin-left: 60px !important;
+}
+.mr-l70 {
+  margin-left: 70px !important;
+}
+.mr-l80 {
+  margin-left: 80px !important;
+}
+.mr-l90 {
+  margin-left: 90px !important;
+}
+.mr-l100 {
+  margin-left: 100px !important;
+}
+
+/* padding  */
+.pd0 {
+  padding: 0px !important;
+}
+.pd10 {
+  padding: 10px !important;
+}
+.pd20 {
+  padding: 20px !important;
+}
+.pd30 {
+  padding: 30px !important;
+}
+.pd40 {
+  padding: 40px !important;
+}
+.pd50 {
+  padding: 50px !important;
+}
+.pd60 {
+  padding: 60px !important;
+}
+.pd70 {
+  padding: 70px !important;
+}
+.pd80 {
+  padding: 80px !important;
+}
+.pd90 {
+  padding: 90px !important;
+}
+.pd100 {
+  padding: 100px !important;
+}
+
+/* padding top */
+.pd-t0 {
+  padding-top: 0px !important;
+}
+.pd-t10 {
+  padding-top: 10px !important;
+}
+.pd-t20 {
+  padding-top: 20px !important;
+}
+.pd-t30 {
+  padding-top: 30px !important;
+}
+.pd-t40 {
+  padding-top: 40px !important;
+}
+.pd-t50 {
+  padding-top: 50px !important;
+}
+.pd-t60 {
+  padding-top: 60px !important;
+}
+.pd-t70 {
+  padding-top: 70px !important;
+}
+.pd-t80 {
+  padding-top: 80px !important;
+}
+.pd-t90 {
+  padding-top: 90px !important;
+}
+.pd-t100 {
+  padding-top: 100px !important;
+}
+
+/* padding right */
+.pd-r0 {
+  padding-right: 0px !important;
+}
+.pd-r10 {
+  padding-right: 10px !important;
+}
+.pd-r15 {
+  padding-right: 15px !important;
+}
+.pd-r20 {
+  padding-right: 20px !important;
+}
+.pd-r30 {
+  padding-right: 30px !important;
+}
+.pd-r40 {
+  padding-right: 40px !important;
+}
+.pd-r50 {
+  padding-right: 50px !important;
+}
+.pd-r60 {
+  padding-right: 60px !important;
+}
+.pd-r70 {
+  padding-right: 70px !important;
+}
+.pd-r80 {
+  padding-right: 80px !important;
+}
+.pd-r90 {
+  padding-right: 90px !important;
+}
+.pd-r100 {
+  padding-right: 100px !important;
+}
+
+/* padding bottom */
+.pd-b0 {
+  padding-bottom: 0px !important;
+}
+.pd-b10 {
+  padding-bottom: 10px !important;
+}
+.pd-b20 {
+  padding-bottom: 20px !important;
+}
+.pd-b30 {
+  padding-bottom: 30px !important;
+}
+.pd-b40 {
+  padding-bottom: 40px !important;
+}
+.pd-b50 {
+  padding-bottom: 50px !important;
+}
+.pd-b60 {
+  padding-bottom: 60px !important;
+}
+.pd-b70 {
+  padding-bottom: 70px !important;
+}
+.pd-b80 {
+  padding-bottom: 80px !important;
+}
+.pd-b90 {
+  padding-bottom: 90px !important;
+}
+.pd-b100 {
+  padding-bottom: 100px !important;
+}
+
+/* padding left */
+.pd-l0 {
+  padding-left: 0px !important;
+}
+.pd-l10 {
+  padding-left: 10px !important;
+}
+.pd-l15 {
+  padding-left: 15px !important;
+}
+.pd-l20 {
+  padding-left: 20px !important;
+}
+.pd-l30 {
+  padding-left: 30px !important;
+}
+.pd-l40 {
+  padding-left: 40px !important;
+}
+.pd-l50 {
+  padding-left: 50px !important;
+}
+.pd-l60 {
+  padding-left: 60px !important;
+}
+.pd-l70 {
+  padding-left: 70px !important;
+}
+.pd-l80 {
+  padding-left: 80px !important;
+}
+.pd-l90 {
+  padding-left: 90px !important;
+}
+.pd-l100 {
+  padding-left: 100px !important;
+}
+.pd15 {
+  padding: 15px;
+}
+.text-center {
+  text-align: center !important;
+}
+.color-blue {
+  color: #2996b0 !important;
+}
+
+.btnLogin {
+  width: 150px;
+  margin-top: 39px;
+  margin-left: 75px;
+}
+//button gradient
+.gradient {
+  // --background: linear-gradient(135deg,  rgb(65,234,125) 18%,rgb(65,234,125) 39%,rgb(50,32,211) 98%) !important;
+  border-radius: 10%;
+  --background: rgb(65, 234, 125);
+  --background: linear-gradient(356.38deg, #3220d3 0%, #41ea7d 100%);
+  border-radius: 21px;
+  box-shadow: 5px 5px 13px 0 rgba(28, 110, 154, 0.5);
+}
+
+//navbar gradient
+.navGradient {
+  // --background: linear-gradient(135deg,  rgb(65,234,125) 18%,rgb(65,234,125) 39%,rgb(50,32,211) 98%) !important;
+  // --background: rgb(65,234,125);
+  // --background: linear-gradient(0deg, #3220D3 0%, #41EA7D 100%);
+  --background: rgb(65, 234, 125);
+  --background: linear-gradient(356.38deg, #3220d3 0%, #41ea7d 100%);
+  //--background: linear-gradient(356.38deg, #3220D3 0%, #41EA7D 100%);
+  // --background: -moz-linear-gradient(top, rgb(65,234,125) 1%, rgb(50,32,211) 100%);
+  // --background: -webkit-linear-gradient(top, rgb(65,234,125) 1%,rgb(50,32,211) 100%);
+  // --background: linear-gradient(to bottom, rgb(65,234,125) 1%,rgb(50,32,211) 100%);
+  --filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41ea7d', endColorstr='#3220d3',GradientType=0 );
+  // box-shadow: 5px 5px 13px 0 rgba(28, 110, 154, 0.5);
+  // height: 50px;
+}
+// .modalCss .modal-wrapper {
+//   // transparent black background overlay
+//   --width: 80%;
+//   --height: 40%;
+//   border-radius: 10%;
+// }
+
+ion-content.background {
+  //--background: url('src\assets\imgs\appbg@2x.jpg') no-repeat 100% 100%;
+  --background: url("../assets/imgs/appbg.jpg") no-repeat 100% 100%;
+}
+
+.title-text {
+  font-family: SFPROTEXT-REGULAR;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: normal;
+  // padding-top: 10px;
+  // padding-right: 50px;
+}
+.my-custom-menu {
+  color: #ffffff;
+}
+.sub-title {
+  font-family: SFPROTEXT-SEMIBOLD;
+  font-weight: normal;
+  color: #000000;
+  font-size: 14px;
+  margin: 0px 0px 11px !important;
+}
+.slide-btn button{
+  background: transparent;
+}
+.slide-btn img {
+  max-width: 23px !important;
+  max-height: 23px !important;
+  width: 23px !important;
+  height: 23px !important;
+  border-radius: 0 !important;
+}
+hr {
+  border-width: 1px;
+  border-color: #ffffff !important;
+  height: 0px;
+}
+.location-card p {
+  font-family: SFPROTEXT-BOLD;
+  font-size: 14px;
+  color: #272727;
+  margin: 10px 0px;
+}
+
+.color-gray {
+  color: #9c9c9c !important;
+}
+:host(.item-label-floating) .item-native,
+:host(.item-label-stacked) .item-native {
+  padding-left: 0px !important;
+}
+
+.full-width {
+  width: 100%;
+  display: block;
+}
+.titleText {
+  font-family: SFPROTEXT-REGULAR;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.menu-wrap {
+  --padding-start: 15px;
+  --padding-end: 45px;
+}
+.menu-list ion-item {
+  color: #323030;
+  font-size: 16px;
+  font-family: SFPROTEXT-MEDIUM;
+}
+// enlarging menu hearder
+ion-menu ion-header ion-toolbar {
+  --background: rgb(65, 234, 125);
+  --background: linear-gradient(356.38deg, #3220d3 0%, #41ea7d 100%);
+  height: 110px;
+}
+.nav-logo {
+  width: 150px;
+  margin: 9px auto;
+  display: block;
+}
+
+ion-searchbar {
+  input {
+    border-radius: 30px !important;
+  }
+}
+
+.searchbar-input.sc-ion-searchbar-md{
+  height: 30px !important;
+  padding: 0px 39px;
+  font-size: 14px;
+}
+.searchbar-search-icon.sc-ion-searchbar-md{
+  top: 5px !important;
+}
+
+.modal-page-css .modal-wrapper {
+  height: 260px;
+  width:87%;
+  top: 35%;
+  position: absolute; 
+  display: block;
+  border-radius: 5%;
+}
+
+.event-page-css .modal-wrapper {
+  height: 310px;
+  width:90%;
+  // top: 50%;
+  // transform: translateY(-50%);
+  // -webkit-transform: translateY(-50%);
+  // -moz-transform: translateY(-50%);
+  // -ms-transform: translateY(-50%);
+  position: absolute; 
+  display: block;
+  border-radius: 5%;
+}
+.map-page-css .modal-wrapper {
+  // height: 70%;
+  height: 330px;
+  width: 99%;
+  position: absolute; 
+  display: block;
+  border-radius: 5%;
+}
+#ftze{
+  font-size: 10px;
+}
+.sc-ion-card-ios-h{
+  box-shadow: none;
+}

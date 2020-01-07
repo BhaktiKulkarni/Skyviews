@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-menu id="content" swipeEnabled="false"></ion-menu>
+  <ion-toolbar mode="ios" class="navGradient">
+    <!-- <ion-buttons slot="start"> -->
+    <ion-button fill="clear" (click)="addBusiness()">
+      <ion-icon slot="icon-only" color="light" name="add-circle-outline"></ion-icon>
+    </ion-button>
+    <!-- </ion-buttons> -->
+    <ion-title class="navTitle title-text">My Requests</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" class="iconColor">
+        <ion-icon color="white" slot="icon-only" name="ios-log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="r-card-list" *ngFor="let business of businessList">
+    <ion-item class="r-card" lines="none" class="ion-no-padding">
+      <ion-thumbnail slot="start">
+        <ion-img src="{{business.display_img}}"></ion-img>
+      </ion-thumbnail>
+      <div>
+        <ion-row>
+          <ion-col size="10" class="ion-no-padding" class="card-info">
+            <ion-row>
+              <ion-col class="details-text" size="12">
+                <h5>{{business.title}}</h5>
+                <p>{{business.description | slice:0:70}}{{business.description.length>60 ? '...':''}}</p>
+              </ion-col>
+              <ion-col size="6">
+                <div class="card-icon">
+                  <img class="edit-icon" src="/assets/imgs/flaticon1562646853-svg.svg">
+                  <span (click)="editBusiness(business)" class="textEdit">Edit</span>
+                </div>
+              </ion-col>
+              <ion-col size="6">
+                <div class="card-icon">
+                  <ion-icon name="trash" class="iconTrash"></ion-icon>
+                  <span (click)="deleteBusiness(business)" class="textDel">Delete</span>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="card-status">
+        <span *ngIf="business.post_status == 'publish'" class="bg-green">Approved</span>
+        <span *ngIf="business.post_status == 'draft'" class="bg-orange">Pending</span>
+        <span *ngIf="business.post_status == 'trash'" class="bg-red">Rejected</span>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
