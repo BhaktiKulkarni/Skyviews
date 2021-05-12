@@ -36,7 +36,7 @@
     "@mapbox/mapbox-gl-directions": "^4.0.2",
     "@mapbox/mapbox-gl-geocoder": "^4.4.2",
     "call-number": "^1.0.1",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "cordova-android": "^8.1.0",
     "cordova-ios": "5.1.1",
     "cordova-plugin-camera": "^4.1.0",
